@@ -1,2 +1,2 @@
 # Deep-Fried
-The Study Support Platform
+This is a platform to support your studies.
