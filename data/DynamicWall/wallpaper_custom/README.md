@@ -1,0 +1,1 @@
+# DynamicWall img folder
