@@ -1,0 +1,2991 @@
+<!DOCTYPE html>
+<!--Deep-Fried by Carnation>
+<!---- Deep-Fried on Web-->
+<!--Deep-Fried 5 (ver.130)--->
+<!----SYSTEM by DEEP - 5-->
+<!--ソースコードワールド5.0--->
+<!-----------
+会社について、色々書いてみて→
+----------->
+<!--
+Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes.
+
+The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them.
+
+About the only thing you can’t do is ignore them. Because they change things. They invent. They imagine. They heal. They explore. They create. They inspire. They push the human race forward.
+
+Maybe they have to be crazy.
+
+How else can you stare at an empty canvas and see a work of art? Or sit in silence and hear a song that’s never been written? Or gaze at a red planet and see a laboratory on wheels?
+
+We make tools for these kinds of people.
+
+While some see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.
+Think Defferent.
+--->
+<!-- 使っている技術一覧--->
+<!---
+1. XP.CSS by botoxparty
+2. 7.CSS  by khang-nd
+3. JS-Cookie by js-cookie
+4.Jquery by Jquery
+5.Apple San Francisco Pro JP by Apple 
+6.AppleGaramond by Apple
+7.Chicago by Apple
+8.SpaceUI by Carnation
+9.Deep-6 by Carnation
+__________________________
+Jquery sappoed list
+Current Active Support
+Desktop
+・Chrome: (Current - 1) and Current
+・Edge: (Current - 1) and Current
+・Firefox: (Current - 1) and Current, ESR
+・Internet Explorer: 9+
+・Safari: (Current - 1) and Current
+・Opera: Current
+Mobile
+・Stock browser on Android 4.0+[1]
+・Safari on iOS 7+[1]
+-->
+<script>
+	console.time("Deep-Fried起動時間")
+	const 開発中 = false;
+	const info = ["DEEP-FRIED", "DEEP-FRIED-DEVELOPMENT", "DEEP-FRIED-DEVELOPMENT-VERSION-5.0", "DEEP-FRIED-DEVELOPMENT-CORDE-NAME-DORINEPLUS"];
+
+	//開発中→trueにすること！
+	/*
+	Deep-Friedの最小要件
+	800MHz以上のCPU
+	4GB以上のメモリ
+	最新技術に対応したグラフィックブラウザー
+	
+	__________
+	Deep-Friedの推奨要件:
+	2GHz以上のデュアルコアCPU
+	8GBのメモリ
+	最新版のChrome,Safari,Firefox,Edge
+	GPU
+	横幅1920px以上の2K以上のタッチディスプレイ
+	マウスとキーボード
+	上記の条件が満たせる最新のOS
+	
+	_____________
+	Deep-Fried Minimum Requirements
+	800 MHz CPU or higher
+	4GB or more memory
+	A graphics browser that supports the latest technology
+	
+	__________
+	Deep-Fried's recommended requirements
+	2GHz or faster dual-core CPU
+	8 GB memory
+	Latest version of Chrome, Safari, Firefox, Edge
+	GPU
+	2K touch display with a minimum width of 1920
+	Mouse and keyboard
+	Latest OS that meets the above requirements
+	*/
+
+</script>
+<script src="notification.js"></script>
+<html lang="ja">
+
+<head>
+	<!----AppManifest---->
+	<link rel="manifest" href="manifest.json">
+	<!---icon start------>
+	<link rel="icon" href="data/icon/favicon.ico" sizes="any"><!-- 32×32 -->
+	<link rel="icon" href="data/icon/icon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="data/icon/apple-touch-icon.png"><!-- 180×180 -->
+	<link rel="manifest" href="data/icon/manifest.webmanifest">
+	<!-----icon end. ------>
+	<meta name="theme-color" content="#2cb4ad" />
+	<meta name="viewport" content="width=device-width,Initial-scale=1">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<title>Deep-Fried</title>
+	<link rel="preload" href="data/spaceui/SPACEUI.css" as="style">
+	<link rel="stylesheet" href="data/spaceui/SPACEUI.css" media="print" onload="this.media='all'">
+	<script id="jqeury" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script id="jqueryui" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+		defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.12/push.min.js" defer></script>
+	<script src="./data/kitty/kitty.mjs" type="module" defer></script>
+	<!--jqeury-ui.css-->
+	<div id="style_back_setting">
+		<script>
+
+			eval(
+				(function (p, a, c, k, e, d) {
+					e = function (c) {
+						return (
+							(c < a ? "" : e(parseInt(c / a))) +
+							((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
+						);
+					};
+					if (!"".replace(/^/, String)) {
+						while (c--) {
+							d[e(c)] = k[c] || e(c);
+						}
+						k = [
+							function (e) {
+								return d[e];
+							},
+						];
+						e = function () {
+							return "\\w+";
+						};
+						c = 1;
+					}
+					while (c--) {
+						if (k[c]) {
+							p = p.replace(new RegExp("\\b" + e(c) + "\\b", "g"), k[c]);
+						}
+					}
+					return p;
+				})(
+					"6.15={3o:d(e){7 x=0;7 y=0;7 1Q=1A;7 A=e.L;8(6(e).H('Q')=='U'){1E=A.1a;2y=A.O;A.1a='1F';A.Q='1Y';A.O='2e';1Q=26}7 4=e;2P(4){x+=4.3B+(4.1I&&!6.3p.41?F(4.1I.2X)||0:0);y+=4.3x+(4.1I&&!6.3p.41?F(4.1I.2Z)||0:0);4=4.4e}4=e;2P(4&&4.4a&&4.4a.39()!='V'){x-=4.1D||0;y-=4.1s||0;4=4.2x}8(1Q){A.Q='U';A.O=2y;A.1a=1E}q{x:x,y:y}},4E:d(4){7 x=0,y=0;2P(4){x+=4.3B||0;y+=4.3x||0;4=4.4e}q{x:x,y:y}},35:d(e){7 w=6.H(e,'1T');7 h=6.H(e,'36');7 1e=0;7 1o=0;7 A=e.L;8(6(e).H('Q')!='U'){1e=e.1z;1o=e.2s}u{1E=A.1a;2y=A.O;A.1a='1F';A.Q='1Y';A.O='2e';1e=e.1z;1o=e.2s;A.Q='U';A.O=2y;A.1a=1E}q{w:w,h:h,1e:1e,1o:1o}},4P:d(4){q{1e:4.1z||0,1o:4.2s||0}},58:d(e){7 h,w,22;8(e){w=e.2a;h=e.29}u{22=D.Y;w=2z.3c||2N.3c||(22&&22.2a)||D.V.2a;h=2z.31||2N.31||(22&&22.29)||D.V.29}q{w:w,h:h}},3P:d(e){7 t,l,w,h,1J,1R;8(e&&e.2E.39()!='V'){t=e.1s;l=e.1D;w=e.3j;h=e.3e;1J=0;1R=0}u{8(D.Y&&D.Y.1s){t=D.Y.1s;l=D.Y.1D;w=D.Y.3j;h=D.Y.3e}u 8(D.V){t=D.V.1s;l=D.V.1D;w=D.V.3j;h=D.V.3e}1J=2N.3c||D.Y.2a||D.V.2a||0;1R=2N.31||D.Y.29||D.V.29||0}q{t:t,l:l,w:w,h:h,1J:1J,1R:1R}},3L:d(e,1U){7 4=6(e);7 t=4.H('2j')||'';7 r=4.H('2k')||'';7 b=4.H('2n')||'';7 l=4.H('2l')||'';8(1U)q{t:F(t)||0,r:F(r)||0,b:F(b)||0,l:F(l)};u q{t:t,r:r,b:b,l:l}},56:d(e,1U){7 4=6(e);7 t=4.H('3w')||'';7 r=4.H('3u')||'';7 b=4.H('3s')||'';7 l=4.H('3t')||'';8(1U)q{t:F(t)||0,r:F(r)||0,b:F(b)||0,l:F(l)};u q{t:t,r:r,b:b,l:l}},4Z:d(e,1U){7 4=6(e);7 t=4.H('2Z')||'';7 r=4.H('3G')||'';7 b=4.H('3y')||'';7 l=4.H('2X')||'';8(1U)q{t:F(t)||0,r:F(r)||0,b:F(b)||0,l:F(l)||0};u q{t:t,r:r,b:b,l:l}},3T:d(2i){7 x=2i.53||(2i.52+(D.Y.1D||D.V.1D))||0;7 y=2i.51||(2i.54+(D.Y.1s||D.V.1s))||0;q{x:x,y:y}},3h:d(12,3g){3g(12);12=12.3F;2P(12){6.15.3h(12,3g);12=12.5a}},59:d(12){6.15.3h(12,d(4){S(7 1j 1q 4){8(2R 4[1j]==='d'){4[1j]=20}}})},57:d(4,27){7 1b=$.15.3P();7 3l=$.15.35(4);8(!27||27=='4Y')$(4).H({X:1b.t+((1i.3S(1b.h,1b.1R)-1b.t-3l.1o)/2)+'K'});8(!27||27=='4Q')$(4).H({N:1b.l+((1i.3S(1b.w,1b.1J)-1b.l-3l.1e)/2)+'K'})},4O:d(4,3U){7 3V=$('3q[@2u*=\"2w\"]',4||D),2w;3V.1V(d(){2w=k.2u;k.2u=3U;k.L.4M=\"4N:4R.4S.4W(2u='\"+2w+\"')\"})}};[].4i||(4V.4U.4i=d(v,n){n=(n==20)?0:n;7 m=k.1m;S(7 i=n;i<m;i++)8(k[i]==v)q i;q-1});6.3A=d(e){8(/^4T$|^4L$|^5b$|^5c$|^5t$|^5s$|^5r$|^5q$|^5u$|^V$|^5v$|^5z$|^5y$|^5x$|^5w$|^5p$|^5o$/i.2q(e.2E))q 1A;u q 26};6.E.5h=d(e,1p){7 c=e.3F;7 1d=c.L;1d.O=1p.O;1d.2j=1p.18.t;1d.2l=1p.18.l;1d.2n=1p.18.b;1d.2k=1p.18.r;1d.X=1p.X+'K';1d.N=1p.N+'K';e.2x.4f(c,e);e.2x.5g(e)};6.E.5f=d(e){8(!6.3A(e))q 1A;7 t=6(e);7 A=e.L;7 1Q=1A;7 J={};J.O=t.H('O');8(t.H('Q')=='U'){1E=t.H('1a');A.1a='1F';A.Q='';1Q=26}J.32=6.15.35(e);J.18=6.15.3L(e);7 2Y=e.1I?e.1I.4g:t.H('5d');J.X=F(t.H('X'))||0;J.N=F(t.H('N'))||0;7 3J='5e'+F(1i.5i()*4p);7 1x=D.5j(/^3q$|^5n$|^5m$|^5l$|^5k$|^5A$|^2V$|^4u$|^4y$|^4z$|^4x$|^4v$|^4s$|^4H$/i.2q(e.2E)?'4J':e.2E);6.1j(1x,'4F',3J);1x.3X='4B';7 R=1x.L;7 X=0;7 N=0;8(J.O=='33'||J.O=='2e'){X=J.X;N=J.N}R.Q='U';R.X=X+'K';R.N=N+'K';R.O=J.O!='33'&&J.O!='2e'?'33':J.O;R.2K='1F';R.36=J.32.1o+'K';R.1T=J.32.1e+'K';R.2j=J.18.t;R.2k=J.18.r;R.2n=J.18.b;R.2l=J.18.l;8(6.3p.4G){R.4g=2Y}u{R.4D=2Y}e.2x.4f(1x,e);A.2j='1M';A.2k='1M';A.2n='1M';A.2l='1M';A.O='2e';A.4C='U';A.X='1M';A.N='1M';8(1Q){A.Q='U';A.1a=1E}1x.4A(e);R.Q='1Y';q{J:J,4I:6(1x)}};6.E.2f={4K:[0,B,B],4r:[3E,B,B],4w:[4l,4l,4t],4X:[0,0,0],60:[0,0,B],6P:[3H,42,42],6O:[0,B,B],6N:[0,0,1L],6L:[0,1L,1L],6M:[3b,3b,3b],6Q:[0,6R,0],6W:[6V,6U,4k],6S:[1L,0,1L],6T:[6K,4k,47],6J:[B,3I,0],6B:[6A,50,6z],6x:[1L,0,0],6Y:[6C,6D,6I],6H:[6G,0,2U],6E:[B,0,B],6F:[B,6X,0],7a:[0,1v,0],7j:[75,0,7i],7f:[3E,3v,3I],7e:[7h,7l,3v],7g:[3r,B,B],7c:[4c,7d,4c],72:[2U,2U,2U],71:[B,70,74],76:[B,B,3r],7b:[0,B,0],79:[B,0,B],77:[1v,0,0],78:[0,0,1v],6Z:[1v,1v,0],73:[B,3H,0],7k:[B,2I,6y],6v:[1v,0,1v],5V:[B,0,0],5U:[2I,2I,2I],5T:[B,B,B],5R:[B,B,0]};6.E.1w=d(16,3z){8(6.E.2f[16])q{r:6.E.2f[16][0],g:6.E.2f[16][1],b:6.E.2f[16][2]};u 8(M=/^1N\\(\\s*([0-9]{1,3})\\s*,\\s*([0-9]{1,3})\\s*,\\s*([0-9]{1,3})\\s*\\)$/.2A(16))q{r:F(M[1]),g:F(M[2]),b:F(M[3])};u 8(M=/1N\\(\\s*([0-9]+(?:\\.[0-9]+)?)\\%\\s*,\\s*([0-9]+(?:\\.[0-9]+)?)\\%\\s*,\\s*([0-9]+(?:\\.[0-9]+)?)\\%\\s*\\)$/.2A(16))q{r:Z(M[1])*2.55,g:Z(M[2])*2.55,b:Z(M[3])*2.55};u 8(M=/^#([a-1H-1B-9])([a-1H-1B-9])([a-1H-1B-9])$/.2A(16))q{r:F(\"1C\"+M[1]+M[1]),g:F(\"1C\"+M[2]+M[2]),b:F(\"1C\"+M[3]+M[3])};u 8(M=/^#([a-1H-1B-9]{2})([a-1H-1B-9]{2})([a-1H-1B-9]{2})$/.2A(16))q{r:F(\"1C\"+M[1]),g:F(\"1C\"+M[2]),b:F(\"1C\"+M[3])};u q 3z==26?1A:{r:B,g:B,b:B}};6.E.4n={3y:1,2X:1,3G:1,2Z:1,5S:1,5B:1,36:1,N:1,5W:1,5X:1,2n:1,2l:1,2k:1,2j:1,62:1,2T:1,61:1,6w:1,1f:1,5Y:1,5Z:1,3s:1,3t:1,3u:1,3w:1,38:1,5Q:1,X:1,1T:1,2O:1};6.E.49={5P:1,5G:1,5H:1,5F:1,5E:1,16:1,5C:1};6.E.25=['5D','5I','5J','5O'];6.E.3k={'3d':['24','3W'],'2B':['24','3f'],'2D':['2D',''],'2C':['2C','']};6.3Q.4b({5N:d(1h,1G,P,2v){q k.2d(d(){7 2t=6.1G(1G,P,2v);7 e=28 6.4m(k,2t,1h)})},37:d(1G,2v){q k.2d(d(){7 2t=6.1G(1G,2v);7 e=28 6.37(k,2t)})},5M:d(14){q k.1V(d(){8(k.1n)6.3m(k,14)})},5K:d(14){q k.1V(d(){8(k.1n)6.3m(k,14);8(k.2d&&k.2d['E'])k.2d.E=[]})}});6.4b({37:d(C,o){7 z=k,4o;z.14=d(){8(6.43(o.2M))o.2M.3Z(C)};z.2h=3O(d(){z.14()},o.1k);C.1n=z},P:{4q:d(p,n,4j,4d,1k){q((-1i.5L(p*1i.63)/2)+0.5)*4d+4j}},4m:d(C,o,1h){7 z=k,4o;7 y=C.L;7 44=6.H(C,\"2K\");7 1O=6.H(C,\"Q\");7 G={};z.2L=(28 46()).48();o.P=o.P&&6.P[o.P]?o.P:'4q';z.2Q=d(I,W){8(6.E.4n[I]){8(W=='2H'||W=='2G'||W=='3N'){8(!C.1r)C.1r={};7 r=Z(6.1y(C,I));C.1r[I]=r&&r>-4p?r:(Z(6.H(C,I))||0);W=W=='3N'?(1O=='U'?'2H':'2G'):W;o[W]=26;G[I]=W=='2H'?[0,C.1r[I]]:[C.1r[I],0];8(I!='1f')y[I]=G[I][0]+(I!='2O'&&I!='34'?'K':'');u 6.1j(y,\"1f\",G[I][0])}u{G[I]=[Z(6.1y(C,I)),Z(W)||0]}}u 8(6.E.49[I])G[I]=[6.E.1w(6.1y(C,I)),6.E.1w(W)];u 8(/^2D$|2C$|24$|2B$|3d$/i.2q(I)){7 m=W.1t(/\\s+/g,' ').1t(/1N\\s*\\(\\s*/g,'1N(').1t(/\\s*,\\s*/g,',').1t(/\\s*\\)/g,')').64(/([^\\s]+)/g);6n(I){2b'2D':2b'2C':2b'3d':2b'2B':m[3]=m[3]||m[1]||m[0];m[2]=m[2]||m[0];m[1]=m[1]||m[0];S(7 i=0;i<6.E.25.1m;i++){7 1l=6.E.3k[I][0]+6.E.25[i]+6.E.3k[I][1];G[1l]=I=='2B'?[6.E.1w(6.1y(C,1l)),6.E.1w(m[i])]:[Z(6.1y(C,1l)),Z(m[i])]}3R;2b'24':S(7 i=0;i<m.1m;i++){7 3n=Z(m[i]);7 2r=!6m(3n)?'3W':(!/6l|U|1F|6j|6k|6o|6p|6u|6t|6s|6q/i.2q(m[i])?'3f':1A);8(2r){S(7 j=0;j<6.E.25.1m;j++){1l='24'+6.E.25[j]+2r;G[1l]=2r=='3f'?[6.E.1w(6.1y(C,1l)),6.E.1w(m[i])]:[Z(6.1y(C,1l)),3n]}}u{y['6r']=m[i]}}3R}}u{y[I]=W}q 1A};S(p 1q 1h){8(p=='L'){7 1c=6.30(1h[p]);S(1P 1q 1c){k.2Q(1P,1c[1P])}}u 8(p=='3X'){8(D.2S)S(7 i=0;i<D.2S.1m;i++){7 1K=D.2S[i].1K||D.2S[i].6i||20;8(1K){S(7 j=0;j<1K.1m;j++){8(1K[j].6h=='.'+1h[p]){7 1X=28 69('\\.'+1h[p]+' {');7 1g=1K[j].L.68;7 1c=6.30(1g.1t(1X,'').1t(/}/g,''));S(1P 1q 1c){k.2Q(1P,1c[1P])}}}}}}u{k.2Q(p,1h[p])}}y.Q=1O=='U'?'1Y':1O;y.2K='1F';z.14=d(){7 t=(28 46()).48();8(t>o.1k+z.2L){4h(z.2h);z.2h=20;S(p 1q G){8(p==\"1f\")6.1j(y,\"1f\",G[p][1]);u 8(2R G[p][1]=='2V')y[p]='1N('+G[p][1].r+','+G[p][1].g+','+G[p][1].b+')';u y[p]=G[p][1]+(p!='2O'&&p!='34'?'K':'')}8(o.2G||o.2H)S(7 p 1q C.1r)8(p==\"1f\")6.1j(y,p,C.1r[p]);u y[p]=\"\";y.Q=o.2G?'U':(1O!='U'?1O:'1Y');y.2K=44;C.1n=20;8(6.43(o.2M))o.2M.3Z(C)}u{7 n=t-k.2L;7 2c=n/o.1k;S(p 1q G){8(2R G[p][1]=='2V'){y[p]='1N('+F(6.P[o.P](2c,n,G[p][0].r,(G[p][1].r-G[p][0].r),o.1k))+','+F(6.P[o.P](2c,n,G[p][0].g,(G[p][1].g-G[p][0].g),o.1k))+','+F(6.P[o.P](2c,n,G[p][0].b,(G[p][1].b-G[p][0].b),o.1k))+')'}u{7 2W=6.P[o.P](2c,n,G[p][0],(G[p][1]-G[p][0]),o.1k);8(p==\"1f\")6.1j(y,\"1f\",2W);u y[p]=2W+(p!='2O'&&p!='34'?'K':'')}}}};z.2h=3O(d(){z.14()},13);C.1n=z},3m:d(C,14){8(14)C.1n.2L-=67;u{2z.4h(C.1n.2h);C.1n=20;6.65(C,\"E\")}}});6.30=d(1g){7 1c={};8(2R 1g=='66'){1g=1g.39().40(';');S(7 i=0;i<1g.1m;i++){1X=1g[i].40(':');8(1X.1m==2){1c[6.45(1X[0].1t(/\\-(\\w)/g,d(m,c){q c.6a()}))]=6.45(1X[1])}}}q 1c};6.1u={3K:d(o){q k.1V(d(){7 4=k;4.f={10:6(o.10,k),23:6(o.23,k),21:6.15.3o(k),T:o.T,2p:o.2p,1Z:o.1Z,3Y:o.3Y,17:o.17,2T:o.2T};6.1u.2J(4,0);6(2z).2F('6b',d(){4.f.21=6.15.3o(4);6.1u.2J(4,0);6.1u.3i(4)});6.1u.3i(4);4.f.10.2F('6g',d(){6(4.f.2p,k).1S(0).L.Q='1Y'}).2F('6f',d(){6(4.f.2p,k).1S(0).L.Q='U'});6(D).2F('6e',d(e){7 2g=6.15.3T(e);7 19=0;8(4.f.17&&4.f.17=='3M')7 2o=2g.x-4.f.21.x-(4.1z-4.f.T*4.f.10.1W())/2-4.f.T/2;u 8(4.f.17&&4.f.17=='38')7 2o=2g.x-4.f.21.x-4.1z+4.f.T*4.f.10.1W();u 7 2o=2g.x-4.f.21.x;7 3D=1i.3C(2g.y-4.f.21.y-4.2s/2,2);4.f.10.1V(d(2m){11=1i.6c(1i.3C(2o-2m*4.f.T,2)+3D);11-=4.f.T/2;11=11<0?0:11;11=11>4.f.1Z?4.f.1Z:11;11=4.f.1Z-11;3a=4.f.2T*11/4.f.1Z;k.L.1T=4.f.T+3a+'K';k.L.N=4.f.T*2m+19+'K';19+=3a});6.1u.2J(4,19)})})},2J:d(4,19){8(4.f.17)8(4.f.17=='3M')4.f.23.1S(0).L.N=(4.1z-4.f.T*4.f.10.1W())/2-19/2+'K';u 8(4.f.17=='N')4.f.23.1S(0).L.N=-19/4.f.10.1W()+'K';u 8(4.f.17=='38')4.f.23.1S(0).L.N=(4.1z-4.f.T*4.f.10.1W())-19/2+'K';4.f.23.1S(0).L.1T=4.f.T*4.f.10.1W()+19+'K'},3i:d(4){4.f.10.1V(d(2m){k.L.1T=4.f.T+'K';k.L.N=4.f.T*2m+'K'})}};6.3Q.6d=6.1u.3K;",
+					62,
+					456,
+					"||||el||jQuery|var|if|||||function||fisheyeCfg|||||this||||options||return||||else||||||es|255|elem|document|fx|parseInt|props|css|tp|oldStyle|px|style|result|left|position|easing|display|wrs|for|itemWidth|none|body|vp|top|documentElement|parseFloat|items|distance|nodeEl||step|iUtil|color|halign|margins|toAdd|visibility|clientScroll|newStyles|cs|wb|opacity|styles|prop|Math|attr|duration|nmp|length|animationHandler|hb|old|in|orig|scrollTop|replace|iFisheye|128|parseColor|wr|curCSS|offsetWidth|false|F0|0x|scrollLeft|oldVisibility|hidden|speed|fA|currentStyle|iw|cssRules|139|0px|rgb|oldDisplay|np|restoreStyle|ih|get|width|toInteger|each|size|rule|block|proximity|null|pos|de|container|border|cssSides|true|axis|new|clientHeight|clientWidth|case|pr|queue|absolute|namedColors|pointer|timer|event|marginTop|marginRight|marginLeft|nr|marginBottom|posx|itemsText|test|sideEnd|offsetHeight|opt|src|callback|png|parentNode|oldPosition|window|exec|borderColor|padding|margin|nodeName|bind|hide|show|192|positionContainer|overflow|startTime|complete|self|zIndex|while|getValues|typeof|styleSheets|maxWidth|211|object|pValue|borderLeftWidth|oldFloat|borderTopWidth|parseStyle|innerHeight|sizes|relative|fontWeight|getSize|height|pause|right|toLowerCase|extraWidth|169|innerWidth|borderWidth|scrollHeight|Color|func|traverseDOM|positionItems|scrollWidth|cssSidesEnd|windowSize|stopAnim|floatVal|getPosition|browser|img|224|paddingBottom|paddingLeft|paddingRight|230|paddingTop|offsetTop|borderBottomWidth|notColor|fxCheckTag|offsetLeft|pow|posy|240|firstChild|borderRightWidth|165|140|wid|build|getMargins|center|toggle|setInterval|getScroll|fn|break|max|getPointer|emptyGIF|images|Width|className|valign|apply|split|opera||isFunction|oldOverflow|trim|Date||getTime|colorCssProps|tagName|extend|144|delta|offsetParent|insertBefore|styleFloat|clearInterval|indexOf|firstNum|107|245|fxe|cssProps|values|10000|linear|azure|dl|220|iframe|ul|beige|table|button|form|appendChild|fxWrapper|listStyle|cssFloat|getPositionLite|id|msie|ol|wrapper|div|aqua|td|filter|progid|fixPNG|getSizeLite|horizontally|DXImageTransform|Microsoft|tr|prototype|Array|AlphaImageLoader|black|vertically|getBorder||pageY|clientX|pageX|clientY||getPadding|centerEl|getClient|purgeEvents|nextSibling|tbody|caption|float|w_|buildWrapper|removeChild|destroyWrapper|random|createElement|select|hr|input|br|meta|optgroup|colgroup|col|tfoot|thead|th|header|option|frameset|frame|script|textarea|fontSize|outlineColor|Top|borderTopColor|borderRightColor|borderBottomColor|borderLeftColor|Right|Bottom|stopAll|cos|stop|animate|Left|backgroundColor|textIndent|yellow|bottom|white|silver|red|letterSpacing|lineHeight|outlineOffset|outlineWidth|blue|minHeight|maxHeight|PI|match|dequeue|string|100000000|cssText|RegExp|toUpperCase|resize|sqrt|Fisheye|mousemove|mouseout|mouseover|selectorText|rules|dotted|dashed|transparent|isNaN|switch|solid|double|outset|borderStyle|inset|ridge|groove|purple|minWidth|darkred|203|204|153|darkorchid|233|150|fuchsia|gold|148|darkviolet|122|darkorange|85|darkcyan|darkgrey|darkblue|cyan|brown|darkgreen|100|darkmagenta|darkolivegreen|183|189|darkkhaki|215|darksalmon|olive|182|lightpink|lightgrey|orange|193||lightyellow|maroon|navy|magenta|green|lime|lightgreen|238|lightblue|khaki|lightcyan|173|130|indigo|pink|216".split(
+						"|"
+					),
+					0,
+					{}
+				)
+			);
+
+		</script>
+		<script id="contextAPI">
+			window.onload = function () {
+				document.body.addEventListener('contextmenu', function (e) {
+					e.preventDefault();
+					document.getElementById('contextmenu').style.left = e.pageX + "px";
+					document.getElementById('contextmenu').style.top = e.pageY + "px";
+					document.getElementById('contextmenu').style.display = "block";
+				});
+
+				document.body.addEventListener('click', function (e) {
+					e.stopPropagation();
+					document.getElementById('contextmenu').style.display = "none";
+				});
+			}
+		</script>
+		<script id="アクセシビリティAPI">
+			function sat(elementSelector) {
+				var element = document.querySelector(elementSelector);
+				element.select();
+			}
+			function st() {
+				var selectedText = "";
+				if (window.getSelection) {
+					selectedText = window.getSelection().toString();
+				} else if (document.selection && document.selection.type != "Control") {
+					selectedText = document.selection.createRange().text;
+				}
+				return selectedText !== "";
+			}
+			function gst() {
+				var selection = window.getSelection();
+				return selection.toString();
+			}
+			function copy(text) {
+				navigator.clipboard.writeText(text);
+			}
+			function speak(text) {
+				var msg = new SpeechSynthesisUtterance(text);
+				window.speechSynthesis.speak(msg);
+			}
+			const menuItems = document.querySelectorAll('.select-item');
+			let currentIndex = 0;
+			document.querySelector('.select-btn.left').addEventListener('click', () => {
+				if (currentIndex > 0) {
+					menuItems[currentIndex].style.transform = 'translateY(-100%)';
+					menuItems[--currentIndex].style.transform = 'translateY(0)';
+				}
+			});
+			document.querySelector('.select-btn.right').addEventListener('click', () => {
+				if (currentIndex < menuItems.length - 1) {
+					menuItems[currentIndex].style.transform = 'translateY(100%)';
+					menuItems[++currentIndex].style.transform = 'translateY(0)';
+				}
+			});
+
+			window.onload = function (e) {
+				let sele = st();
+				let oselt;
+				setInterval(() => {
+					if (sele) { // 選択されたテキストが存在するかどうかをチェック
+						oselt = gst();
+						e.preventDefault();
+						document.getElementById('select').style.left = e.pageX + "px";
+						document.getElementById('select').style.top = e.pageY + "px";
+						document.getElementById('select').style.display = "block";
+					}
+				}, 100)
+			}
+
+		</script>
+		<style id="bodystyle">
+			body {
+				padding: 1px;
+				background-image: url(data/DynamicWall/昼過ぎ.webp);
+				/*4Kの画像。*/
+				/* 背景画像指定 */
+				background-size: cover;
+				background-position: top center;
+			}
+		</style>
+		<style id="font">
+			@font-face {
+				font-family: 'auto';
+				src: url('data/Font/Apple/SFProJP_普通.woff')format('woff');
+				font-display: swap;
+				/*ちなみにここのフォントはぜんぶGitHubから持ってきた*/
+				/*.woff：'woff'
+.woff2：'woff2'
+ .ttf：'truetype'
+.otf：'opentype'
+.eot：'embedded-opentype'（IEのみ）
+.svg：'svg'*/
+
+				/*
+		フォントの定義の説明
+		フォントの定義は次のように行います。
+		@font-face {
+			font-family: 'フォントの名前';
+			src: url('フォントデータのパス')format('フォーマット形式');
+フォーマットは次のような形式がある
+.woff：'woff'
+.woff2：'woff2'
+.ttf：'truetype'
+.otf：'opentype'
+.eot：'embedded-opentype'（IEのみ）
+.svg：'svg'
+		
+		*/
+			}
+
+			@font-face {
+				font-family: 'thin';
+				src: url('data/Font/Apple/SFProJP_細い.woff')format('woff');
+				font-display: swap;
+			}
+
+			@font-face {
+				font-family: 'Chicago';
+				src: url('data/Font/Apple/Chicago.ttf')format('truetype');
+				font-display: swap;
+			}
+
+			@font-face {
+				font-family: 'AppleGaramond';
+				src: url('data/Font/Apple/AppleGaramond.ttf')format('truetype');
+				font-display: swap;
+			}
+
+			body {
+				font-family: 'auto', 'AppleGaramond';
+				/*カスタムバージョン
+		*/
+			}
+		</style>
+	</div>
+	<div id="Library">
+		<script>
+			/* -----------------------------------------------
+			/* Author : Vincent Garreau  - vincentgarreau.com
+			/* MIT license: http://opensource.org/licenses/MIT
+			/* Demo / Generator : vincentgarreau.com/particles.js
+			/* GitHub : github.com/VincentGarreau/particles.js
+			/* How to use? : Check the GitHub README
+			/* v2.0.0
+			/* ----------------------------------------------- */
+			function hexToRgb(e) {var a = /^#?([a-f\d])([a-f\d])([a-f\d])$/i; e = e.replace(a, function (e, a, t, i) {return a + a + t + t + i + i}); var t = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(e); return t ? {r: parseInt(t[1], 16), g: parseInt(t[2], 16), b: parseInt(t[3], 16)} : null} function clamp(e, a, t) {return Math.min(Math.max(e, a), t)} function isInArray(e, a) {return a.indexOf(e) > -1} var pJS = function (e, a) {var t = document.querySelector("#" + e + " > .particles-js-canvas-el"); this.pJS = {canvas: {el: t, w: t.offsetWidth, h: t.offsetHeight}, particles: {number: {value: 400, density: {enable: !0, value_area: 800}}, color: {value: "#fff"}, shape: {type: "circle", stroke: {width: 0, color: "#ff0000"}, polygon: {nb_sides: 5}, image: {src: "", width: 100, height: 100}}, opacity: {value: 1, random: !1, anim: {enable: !1, speed: 2, opacity_min: 0, sync: !1}}, size: {value: 20, random: !1, anim: {enable: !1, speed: 20, size_min: 0, sync: !1}}, line_linked: {enable: !0, distance: 100, color: "#fff", opacity: 1, width: 1}, move: {enable: !0, speed: 2, direction: "none", random: !1, straight: !1, out_mode: "out", bounce: !1, attract: {enable: !1, rotateX: 3e3, rotateY: 3e3}}, array: []}, interactivity: {detect_on: "canvas", events: {onhover: {enable: !0, mode: "grab"}, onclick: {enable: !0, mode: "push"}, resize: !0}, modes: {grab: {distance: 100, line_linked: {opacity: 1}}, bubble: {distance: 200, size: 80, duration: .4}, repulse: {distance: 200, duration: .4}, push: {particles_nb: 4}, remove: {particles_nb: 2}}, mouse: {}}, retina_detect: !1, fn: {interact: {}, modes: {}, vendors: {}}, tmp: {}}; var i = this.pJS; a && Object.deepExtend(i, a), i.tmp.obj = {size_value: i.particles.size.value, size_anim_speed: i.particles.size.anim.speed, move_speed: i.particles.move.speed, line_linked_distance: i.particles.line_linked.distance, line_linked_width: i.particles.line_linked.width, mode_grab_distance: i.interactivity.modes.grab.distance, mode_bubble_distance: i.interactivity.modes.bubble.distance, mode_bubble_size: i.interactivity.modes.bubble.size, mode_repulse_distance: i.interactivity.modes.repulse.distance}, i.fn.retinaInit = function () {i.retina_detect && window.devicePixelRatio > 1 ? (i.canvas.pxratio = window.devicePixelRatio, i.tmp.retina = !0) : (i.canvas.pxratio = 1, i.tmp.retina = !1), i.canvas.w = i.canvas.el.offsetWidth * i.canvas.pxratio, i.canvas.h = i.canvas.el.offsetHeight * i.canvas.pxratio, i.particles.size.value = i.tmp.obj.size_value * i.canvas.pxratio, i.particles.size.anim.speed = i.tmp.obj.size_anim_speed * i.canvas.pxratio, i.particles.move.speed = i.tmp.obj.move_speed * i.canvas.pxratio, i.particles.line_linked.distance = i.tmp.obj.line_linked_distance * i.canvas.pxratio, i.interactivity.modes.grab.distance = i.tmp.obj.mode_grab_distance * i.canvas.pxratio, i.interactivity.modes.bubble.distance = i.tmp.obj.mode_bubble_distance * i.canvas.pxratio, i.particles.line_linked.width = i.tmp.obj.line_linked_width * i.canvas.pxratio, i.interactivity.modes.bubble.size = i.tmp.obj.mode_bubble_size * i.canvas.pxratio, i.interactivity.modes.repulse.distance = i.tmp.obj.mode_repulse_distance * i.canvas.pxratio}, i.fn.canvasInit = function () {i.canvas.ctx = i.canvas.el.getContext("2d")}, i.fn.canvasSize = function () {i.canvas.el.width = i.canvas.w, i.canvas.el.height = i.canvas.h, i && i.interactivity.events.resize && window.addEventListener("resize", function () {i.canvas.w = i.canvas.el.offsetWidth, i.canvas.h = i.canvas.el.offsetHeight, i.tmp.retina && (i.canvas.w *= i.canvas.pxratio, i.canvas.h *= i.canvas.pxratio), i.canvas.el.width = i.canvas.w, i.canvas.el.height = i.canvas.h, i.particles.move.enable || (i.fn.particlesEmpty(), i.fn.particlesCreate(), i.fn.particlesDraw(), i.fn.vendors.densityAutoParticles()), i.fn.vendors.densityAutoParticles()})}, i.fn.canvasPaint = function () {i.canvas.ctx.fillRect(0, 0, i.canvas.w, i.canvas.h)}, i.fn.canvasClear = function () {i.canvas.ctx.clearRect(0, 0, i.canvas.w, i.canvas.h)}, i.fn.particle = function (e, a, t) {if (this.radius = (i.particles.size.random ? Math.random() : 1) * i.particles.size.value, i.particles.size.anim.enable && (this.size_status = !1, this.vs = i.particles.size.anim.speed / 100, i.particles.size.anim.sync || (this.vs = this.vs * Math.random())), this.x = t ? t.x : Math.random() * i.canvas.w, this.y = t ? t.y : Math.random() * i.canvas.h, this.x > i.canvas.w - 2 * this.radius ? this.x = this.x - this.radius : this.x < 2 * this.radius && (this.x = this.x + this.radius), this.y > i.canvas.h - 2 * this.radius ? this.y = this.y - this.radius : this.y < 2 * this.radius && (this.y = this.y + this.radius), i.particles.move.bounce && i.fn.vendors.checkOverlap(this, t), this.color = {}, "object" == typeof e.value) if (e.value instanceof Array) {var s = e.value[Math.floor(Math.random() * i.particles.color.value.length)]; this.color.rgb = hexToRgb(s)} else void 0 != e.value.r && void 0 != e.value.g && void 0 != e.value.b && (this.color.rgb = {r: e.value.r, g: e.value.g, b: e.value.b}), void 0 != e.value.h && void 0 != e.value.s && void 0 != e.value.l && (this.color.hsl = {h: e.value.h, s: e.value.s, l: e.value.l}); else "random" == e.value ? this.color.rgb = {r: Math.floor(256 * Math.random()) + 0, g: Math.floor(256 * Math.random()) + 0, b: Math.floor(256 * Math.random()) + 0} : "string" == typeof e.value && (this.color = e, this.color.rgb = hexToRgb(this.color.value)); this.opacity = (i.particles.opacity.random ? Math.random() : 1) * i.particles.opacity.value, i.particles.opacity.anim.enable && (this.opacity_status = !1, this.vo = i.particles.opacity.anim.speed / 100, i.particles.opacity.anim.sync || (this.vo = this.vo * Math.random())); var n = {}; switch (i.particles.move.direction) {case "top": n = {x: 0, y: -1}; break; case "top-right": n = {x: .5, y: -.5}; break; case "right": n = {x: 1, y: -0}; break; case "bottom-right": n = {x: .5, y: .5}; break; case "bottom": n = {x: 0, y: 1}; break; case "bottom-left": n = {x: -.5, y: 1}; break; case "left": n = {x: -1, y: 0}; break; case "top-left": n = {x: -.5, y: -.5}; break; default: n = {x: 0, y: 0}}i.particles.move.straight ? (this.vx = n.x, this.vy = n.y, i.particles.move.random && (this.vx = this.vx * Math.random(), this.vy = this.vy * Math.random())) : (this.vx = n.x + Math.random() - .5, this.vy = n.y + Math.random() - .5), this.vx_i = this.vx, this.vy_i = this.vy; var r = i.particles.shape.type; if ("object" == typeof r) {if (r instanceof Array) {var c = r[Math.floor(Math.random() * r.length)]; this.shape = c} } else this.shape = r; if ("image" == this.shape) {var o = i.particles.shape; this.img = {src: o.image.src, ratio: o.image.width / o.image.height}, this.img.ratio || (this.img.ratio = 1), "svg" == i.tmp.img_type && void 0 != i.tmp.source_svg && (i.fn.vendors.createSvgImg(this), i.tmp.pushing && (this.img.loaded = !1))} }, i.fn.particle.prototype.draw = function () {function e() {i.canvas.ctx.drawImage(r, a.x - t, a.y - t, 2 * t, 2 * t / a.img.ratio)} var a = this; if (void 0 != a.radius_bubble) var t = a.radius_bubble; else var t = a.radius; if (void 0 != a.opacity_bubble) var s = a.opacity_bubble; else var s = a.opacity; if (a.color.rgb) var n = "rgba(" + a.color.rgb.r + "," + a.color.rgb.g + "," + a.color.rgb.b + "," + s + ")"; else var n = "hsla(" + a.color.hsl.h + "," + a.color.hsl.s + "%," + a.color.hsl.l + "%," + s + ")"; switch (i.canvas.ctx.fillStyle = n, i.canvas.ctx.beginPath(), a.shape) {case "circle": i.canvas.ctx.arc(a.x, a.y, t, 0, 2 * Math.PI, !1); break; case "edge": i.canvas.ctx.rect(a.x - t, a.y - t, 2 * t, 2 * t); break; case "triangle": i.fn.vendors.drawShape(i.canvas.ctx, a.x - t, a.y + t / 1.66, 2 * t, 3, 2); break; case "polygon": i.fn.vendors.drawShape(i.canvas.ctx, a.x - t / (i.particles.shape.polygon.nb_sides / 3.5), a.y - t / .76, 2.66 * t / (i.particles.shape.polygon.nb_sides / 3), i.particles.shape.polygon.nb_sides, 1); break; case "star": i.fn.vendors.drawShape(i.canvas.ctx, a.x - 2 * t / (i.particles.shape.polygon.nb_sides / 4), a.y - t / 1.52, 2 * t * 2.66 / (i.particles.shape.polygon.nb_sides / 3), i.particles.shape.polygon.nb_sides, 2); break; case "image": if ("svg" == i.tmp.img_type) var r = a.img.obj; else var r = i.tmp.img_obj; r && e()}i.canvas.ctx.closePath(), i.particles.shape.stroke.width > 0 && (i.canvas.ctx.strokeStyle = i.particles.shape.stroke.color, i.canvas.ctx.lineWidth = i.particles.shape.stroke.width, i.canvas.ctx.stroke()), i.canvas.ctx.fill()}, i.fn.particlesCreate = function () {for (var e = 0; e < i.particles.number.value; e++)i.particles.array.push(new i.fn.particle(i.particles.color, i.particles.opacity.value))}, i.fn.particlesUpdate = function () {for (var e = 0; e < i.particles.array.length; e++) {var a = i.particles.array[e]; if (i.particles.move.enable) {var t = i.particles.move.speed / 2; a.x += a.vx * t, a.y += a.vy * t} if (i.particles.opacity.anim.enable && (1 == a.opacity_status ? (a.opacity >= i.particles.opacity.value && (a.opacity_status = !1), a.opacity += a.vo) : (a.opacity <= i.particles.opacity.anim.opacity_min && (a.opacity_status = !0), a.opacity -= a.vo), a.opacity < 0 && (a.opacity = 0)), i.particles.size.anim.enable && (1 == a.size_status ? (a.radius >= i.particles.size.value && (a.size_status = !1), a.radius += a.vs) : (a.radius <= i.particles.size.anim.size_min && (a.size_status = !0), a.radius -= a.vs), a.radius < 0 && (a.radius = 0)), "bounce" == i.particles.move.out_mode) var s = {x_left: a.radius, x_right: i.canvas.w, y_top: a.radius, y_bottom: i.canvas.h}; else var s = {x_left: -a.radius, x_right: i.canvas.w + a.radius, y_top: -a.radius, y_bottom: i.canvas.h + a.radius}; switch (a.x - a.radius > i.canvas.w ? (a.x = s.x_left, a.y = Math.random() * i.canvas.h) : a.x + a.radius < 0 && (a.x = s.x_right, a.y = Math.random() * i.canvas.h), a.y - a.radius > i.canvas.h ? (a.y = s.y_top, a.x = Math.random() * i.canvas.w) : a.y + a.radius < 0 && (a.y = s.y_bottom, a.x = Math.random() * i.canvas.w), i.particles.move.out_mode) {case "bounce": a.x + a.radius > i.canvas.w ? a.vx = -a.vx : a.x - a.radius < 0 && (a.vx = -a.vx), a.y + a.radius > i.canvas.h ? a.vy = -a.vy : a.y - a.radius < 0 && (a.vy = -a.vy)}if (isInArray("grab", i.interactivity.events.onhover.mode) && i.fn.modes.grabParticle(a), (isInArray("bubble", i.interactivity.events.onhover.mode) || isInArray("bubble", i.interactivity.events.onclick.mode)) && i.fn.modes.bubbleParticle(a), (isInArray("repulse", i.interactivity.events.onhover.mode) || isInArray("repulse", i.interactivity.events.onclick.mode)) && i.fn.modes.repulseParticle(a), i.particles.line_linked.enable || i.particles.move.attract.enable) for (var n = e + 1; n < i.particles.array.length; n++) {var r = i.particles.array[n]; i.particles.line_linked.enable && i.fn.interact.linkParticles(a, r), i.particles.move.attract.enable && i.fn.interact.attractParticles(a, r), i.particles.move.bounce && i.fn.interact.bounceParticles(a, r)} } }, i.fn.particlesDraw = function () {i.canvas.ctx.clearRect(0, 0, i.canvas.w, i.canvas.h), i.fn.particlesUpdate(); for (var e = 0; e < i.particles.array.length; e++) {var a = i.particles.array[e]; a.draw()} }, i.fn.particlesEmpty = function () {i.particles.array = []}, i.fn.particlesRefresh = function () {cancelRequestAnimFrame(i.fn.checkAnimFrame), cancelRequestAnimFrame(i.fn.drawAnimFrame), i.tmp.source_svg = void 0, i.tmp.img_obj = void 0, i.tmp.count_svg = 0, i.fn.particlesEmpty(), i.fn.canvasClear(), i.fn.vendors.start()}, i.fn.interact.linkParticles = function (e, a) {var t = e.x - a.x, s = e.y - a.y, n = Math.sqrt(t * t + s * s); if (n <= i.particles.line_linked.distance) {var r = i.particles.line_linked.opacity - n / (1 / i.particles.line_linked.opacity) / i.particles.line_linked.distance; if (r > 0) {var c = i.particles.line_linked.color_rgb_line; i.canvas.ctx.strokeStyle = "rgba(" + c.r + "," + c.g + "," + c.b + "," + r + ")", i.canvas.ctx.lineWidth = i.particles.line_linked.width, i.canvas.ctx.beginPath(), i.canvas.ctx.moveTo(e.x, e.y), i.canvas.ctx.lineTo(a.x, a.y), i.canvas.ctx.stroke(), i.canvas.ctx.closePath()} } }, i.fn.interact.attractParticles = function (e, a) {var t = e.x - a.x, s = e.y - a.y, n = Math.sqrt(t * t + s * s); if (n <= i.particles.line_linked.distance) {var r = t / (1e3 * i.particles.move.attract.rotateX), c = s / (1e3 * i.particles.move.attract.rotateY); e.vx -= r, e.vy -= c, a.vx += r, a.vy += c} }, i.fn.interact.bounceParticles = function (e, a) {var t = e.x - a.x, i = e.y - a.y, s = Math.sqrt(t * t + i * i), n = e.radius + a.radius; n >= s && (e.vx = -e.vx, e.vy = -e.vy, a.vx = -a.vx, a.vy = -a.vy)}, i.fn.modes.pushParticles = function (e, a) {i.tmp.pushing = !0; for (var t = 0; e > t; t++)i.particles.array.push(new i.fn.particle(i.particles.color, i.particles.opacity.value, {x: a ? a.pos_x : Math.random() * i.canvas.w, y: a ? a.pos_y : Math.random() * i.canvas.h})), t == e - 1 && (i.particles.move.enable || i.fn.particlesDraw(), i.tmp.pushing = !1)}, i.fn.modes.removeParticles = function (e) {i.particles.array.splice(0, e), i.particles.move.enable || i.fn.particlesDraw()}, i.fn.modes.bubbleParticle = function (e) {function a() {e.opacity_bubble = e.opacity, e.radius_bubble = e.radius} function t(a, t, s, n, c) {if (a != t) if (i.tmp.bubble_duration_end) {if (void 0 != s) {var o = n - p * (n - a) / i.interactivity.modes.bubble.duration, l = a - o; d = a + l, "size" == c && (e.radius_bubble = d), "opacity" == c && (e.opacity_bubble = d)} } else if (r <= i.interactivity.modes.bubble.distance) {if (void 0 != s) var v = s; else var v = n; if (v != a) {var d = n - p * (n - a) / i.interactivity.modes.bubble.duration; "size" == c && (e.radius_bubble = d), "opacity" == c && (e.opacity_bubble = d)} } else "size" == c && (e.radius_bubble = void 0), "opacity" == c && (e.opacity_bubble = void 0)} if (i.interactivity.events.onhover.enable && isInArray("bubble", i.interactivity.events.onhover.mode)) {var s = e.x - i.interactivity.mouse.pos_x, n = e.y - i.interactivity.mouse.pos_y, r = Math.sqrt(s * s + n * n), c = 1 - r / i.interactivity.modes.bubble.distance; if (r <= i.interactivity.modes.bubble.distance) {if (c >= 0 && "mousemove" == i.interactivity.status) {if (i.interactivity.modes.bubble.size != i.particles.size.value) if (i.interactivity.modes.bubble.size > i.particles.size.value) {var o = e.radius + i.interactivity.modes.bubble.size * c; o >= 0 && (e.radius_bubble = o)} else {var l = e.radius - i.interactivity.modes.bubble.size, o = e.radius - l * c; o > 0 ? e.radius_bubble = o : e.radius_bubble = 0} if (i.interactivity.modes.bubble.opacity != i.particles.opacity.value) if (i.interactivity.modes.bubble.opacity > i.particles.opacity.value) {var v = i.interactivity.modes.bubble.opacity * c; v > e.opacity && v <= i.interactivity.modes.bubble.opacity && (e.opacity_bubble = v)} else {var v = e.opacity - (i.particles.opacity.value - i.interactivity.modes.bubble.opacity) * c; v < e.opacity && v >= i.interactivity.modes.bubble.opacity && (e.opacity_bubble = v)} } } else a(); "mouseleave" == i.interactivity.status && a()} else if (i.interactivity.events.onclick.enable && isInArray("bubble", i.interactivity.events.onclick.mode)) {if (i.tmp.bubble_clicking) {var s = e.x - i.interactivity.mouse.click_pos_x, n = e.y - i.interactivity.mouse.click_pos_y, r = Math.sqrt(s * s + n * n), p = ((new Date).getTime() - i.interactivity.mouse.click_time) / 1e3; p > i.interactivity.modes.bubble.duration && (i.tmp.bubble_duration_end = !0), p > 2 * i.interactivity.modes.bubble.duration && (i.tmp.bubble_clicking = !1, i.tmp.bubble_duration_end = !1)} i.tmp.bubble_clicking && (t(i.interactivity.modes.bubble.size, i.particles.size.value, e.radius_bubble, e.radius, "size"), t(i.interactivity.modes.bubble.opacity, i.particles.opacity.value, e.opacity_bubble, e.opacity, "opacity"))} }, i.fn.modes.repulseParticle = function (e) {function a() {var a = Math.atan2(d, p); if (e.vx = u * Math.cos(a), e.vy = u * Math.sin(a), "bounce" == i.particles.move.out_mode) {var t = {x: e.x + e.vx, y: e.y + e.vy}; t.x + e.radius > i.canvas.w ? e.vx = -e.vx : t.x - e.radius < 0 && (e.vx = -e.vx), t.y + e.radius > i.canvas.h ? e.vy = -e.vy : t.y - e.radius < 0 && (e.vy = -e.vy)} } if (i.interactivity.events.onhover.enable && isInArray("repulse", i.interactivity.events.onhover.mode) && "mousemove" == i.interactivity.status) {var t = e.x - i.interactivity.mouse.pos_x, s = e.y - i.interactivity.mouse.pos_y, n = Math.sqrt(t * t + s * s), r = {x: t / n, y: s / n}, c = i.interactivity.modes.repulse.distance, o = 100, l = clamp(1 / c * (-1 * Math.pow(n / c, 2) + 1) * c * o, 0, 50), v = {x: e.x + r.x * l, y: e.y + r.y * l}; "bounce" == i.particles.move.out_mode ? (v.x - e.radius > 0 && v.x + e.radius < i.canvas.w && (e.x = v.x), v.y - e.radius > 0 && v.y + e.radius < i.canvas.h && (e.y = v.y)) : (e.x = v.x, e.y = v.y)} else if (i.interactivity.events.onclick.enable && isInArray("repulse", i.interactivity.events.onclick.mode)) if (i.tmp.repulse_finish || (i.tmp.repulse_count++, i.tmp.repulse_count == i.particles.array.length && (i.tmp.repulse_finish = !0)), i.tmp.repulse_clicking) {var c = Math.pow(i.interactivity.modes.repulse.distance / 6, 3), p = i.interactivity.mouse.click_pos_x - e.x, d = i.interactivity.mouse.click_pos_y - e.y, m = p * p + d * d, u = -c / m * 1; c >= m && a()} else 0 == i.tmp.repulse_clicking && (e.vx = e.vx_i, e.vy = e.vy_i)}, i.fn.modes.grabParticle = function (e) {if (i.interactivity.events.onhover.enable && "mousemove" == i.interactivity.status) {var a = e.x - i.interactivity.mouse.pos_x, t = e.y - i.interactivity.mouse.pos_y, s = Math.sqrt(a * a + t * t); if (s <= i.interactivity.modes.grab.distance) {var n = i.interactivity.modes.grab.line_linked.opacity - s / (1 / i.interactivity.modes.grab.line_linked.opacity) / i.interactivity.modes.grab.distance; if (n > 0) {var r = i.particles.line_linked.color_rgb_line; i.canvas.ctx.strokeStyle = "rgba(" + r.r + "," + r.g + "," + r.b + "," + n + ")", i.canvas.ctx.lineWidth = i.particles.line_linked.width, i.canvas.ctx.beginPath(), i.canvas.ctx.moveTo(e.x, e.y), i.canvas.ctx.lineTo(i.interactivity.mouse.pos_x, i.interactivity.mouse.pos_y), i.canvas.ctx.stroke(), i.canvas.ctx.closePath()} } } }, i.fn.vendors.eventsListeners = function () {"window" == i.interactivity.detect_on ? i.interactivity.el = window : i.interactivity.el = i.canvas.el, (i.interactivity.events.onhover.enable || i.interactivity.events.onclick.enable) && (i.interactivity.el.addEventListener("mousemove", function (e) {if (i.interactivity.el == window) var a = e.clientX, t = e.clientY; else var a = e.offsetX || e.clientX, t = e.offsetY || e.clientY; i.interactivity.mouse.pos_x = a, i.interactivity.mouse.pos_y = t, i.tmp.retina && (i.interactivity.mouse.pos_x *= i.canvas.pxratio, i.interactivity.mouse.pos_y *= i.canvas.pxratio), i.interactivity.status = "mousemove"}), i.interactivity.el.addEventListener("mouseleave", function (e) {i.interactivity.mouse.pos_x = null, i.interactivity.mouse.pos_y = null, i.interactivity.status = "mouseleave"})), i.interactivity.events.onclick.enable && i.interactivity.el.addEventListener("click", function () {if (i.interactivity.mouse.click_pos_x = i.interactivity.mouse.pos_x, i.interactivity.mouse.click_pos_y = i.interactivity.mouse.pos_y, i.interactivity.mouse.click_time = (new Date).getTime(), i.interactivity.events.onclick.enable) switch (i.interactivity.events.onclick.mode) {case "push": i.particles.move.enable ? i.fn.modes.pushParticles(i.interactivity.modes.push.particles_nb, i.interactivity.mouse) : 1 == i.interactivity.modes.push.particles_nb ? i.fn.modes.pushParticles(i.interactivity.modes.push.particles_nb, i.interactivity.mouse) : i.interactivity.modes.push.particles_nb > 1 && i.fn.modes.pushParticles(i.interactivity.modes.push.particles_nb); break; case "remove": i.fn.modes.removeParticles(i.interactivity.modes.remove.particles_nb); break; case "bubble": i.tmp.bubble_clicking = !0; break; case "repulse": i.tmp.repulse_clicking = !0, i.tmp.repulse_count = 0, i.tmp.repulse_finish = !1, setTimeout(function () {i.tmp.repulse_clicking = !1}, 1e3 * i.interactivity.modes.repulse.duration)}})}, i.fn.vendors.densityAutoParticles = function () {if (i.particles.number.density.enable) {var e = i.canvas.el.width * i.canvas.el.height / 1e3; i.tmp.retina && (e /= 2 * i.canvas.pxratio); var a = e * i.particles.number.value / i.particles.number.density.value_area, t = i.particles.array.length - a; 0 > t ? i.fn.modes.pushParticles(Math.abs(t)) : i.fn.modes.removeParticles(t)} }, i.fn.vendors.checkOverlap = function (e, a) {for (var t = 0; t < i.particles.array.length; t++) {var s = i.particles.array[t], n = e.x - s.x, r = e.y - s.y, c = Math.sqrt(n * n + r * r); c <= e.radius + s.radius && (e.x = a ? a.x : Math.random() * i.canvas.w, e.y = a ? a.y : Math.random() * i.canvas.h, i.fn.vendors.checkOverlap(e))} }, i.fn.vendors.createSvgImg = function (e) {var a = i.tmp.source_svg, t = /#([0-9A-F]{3,6})/gi, s = a.replace(t, function (a, t, i, s) {if (e.color.rgb) var n = "rgba(" + e.color.rgb.r + "," + e.color.rgb.g + "," + e.color.rgb.b + "," + e.opacity + ")"; else var n = "hsla(" + e.color.hsl.h + "," + e.color.hsl.s + "%," + e.color.hsl.l + "%," + e.opacity + ")"; return n}), n = new Blob([s], {type: "image/svg+xml;charset=utf-8"}), r = window.URL || window.webkitURL || window, c = r.createObjectURL(n), o = new Image; o.addEventListener("load", function () {e.img.obj = o, e.img.loaded = !0, r.revokeObjectURL(c), i.tmp.count_svg++}), o.src = c}, i.fn.vendors.destroypJS = function () {cancelAnimationFrame(i.fn.drawAnimFrame), t.remove(), pJSDom = null}, i.fn.vendors.drawShape = function (e, a, t, i, s, n) {var r = s * n, c = s / n, o = 180 * (c - 2) / c, l = Math.PI - Math.PI * o / 180; e.save(), e.beginPath(), e.translate(a, t), e.moveTo(0, 0); for (var v = 0; r > v; v++)e.lineTo(i, 0), e.translate(i, 0), e.rotate(l); e.fill(), e.restore()}, i.fn.vendors.exportImg = function () {window.open(i.canvas.el.toDataURL("image/png"), "_blank")}, i.fn.vendors.loadImg = function (e) {if (i.tmp.img_error = void 0, "" != i.particles.shape.image.src) if ("svg" == e) {var a = new XMLHttpRequest; a.open("GET", i.particles.shape.image.src), a.onreadystatechange = function (e) {4 == a.readyState && (200 == a.status ? (i.tmp.source_svg = e.currentTarget.response, i.fn.vendors.checkBeforeDraw()) : (console.log("Error pJS - Image not found"), i.tmp.img_error = !0))}, a.send()} else {var t = new Image; t.addEventListener("load", function () {i.tmp.img_obj = t, i.fn.vendors.checkBeforeDraw()}), t.src = i.particles.shape.image.src} else console.log("Error pJS - No image.src"), i.tmp.img_error = !0}, i.fn.vendors.draw = function () {"image" == i.particles.shape.type ? "svg" == i.tmp.img_type ? i.tmp.count_svg >= i.particles.number.value ? (i.fn.particlesDraw(), i.particles.move.enable ? i.fn.drawAnimFrame = requestAnimFrame(i.fn.vendors.draw) : cancelRequestAnimFrame(i.fn.drawAnimFrame)) : i.tmp.img_error || (i.fn.drawAnimFrame = requestAnimFrame(i.fn.vendors.draw)) : void 0 != i.tmp.img_obj ? (i.fn.particlesDraw(), i.particles.move.enable ? i.fn.drawAnimFrame = requestAnimFrame(i.fn.vendors.draw) : cancelRequestAnimFrame(i.fn.drawAnimFrame)) : i.tmp.img_error || (i.fn.drawAnimFrame = requestAnimFrame(i.fn.vendors.draw)) : (i.fn.particlesDraw(), i.particles.move.enable ? i.fn.drawAnimFrame = requestAnimFrame(i.fn.vendors.draw) : cancelRequestAnimFrame(i.fn.drawAnimFrame))}, i.fn.vendors.checkBeforeDraw = function () {"image" == i.particles.shape.type ? "svg" == i.tmp.img_type && void 0 == i.tmp.source_svg ? i.tmp.checkAnimFrame = requestAnimFrame(check) : (cancelRequestAnimFrame(i.tmp.checkAnimFrame), i.tmp.img_error || (i.fn.vendors.init(), i.fn.vendors.draw())) : (i.fn.vendors.init(), i.fn.vendors.draw())}, i.fn.vendors.init = function () {i.fn.retinaInit(), i.fn.canvasInit(), i.fn.canvasSize(), i.fn.canvasPaint(), i.fn.particlesCreate(), i.fn.vendors.densityAutoParticles(), i.particles.line_linked.color_rgb_line = hexToRgb(i.particles.line_linked.color)}, i.fn.vendors.start = function () {isInArray("image", i.particles.shape.type) ? (i.tmp.img_type = i.particles.shape.image.src.substr(i.particles.shape.image.src.length - 3), i.fn.vendors.loadImg(i.tmp.img_type)) : i.fn.vendors.checkBeforeDraw()}, i.fn.vendors.eventsListeners(), i.fn.vendors.start()}; Object.deepExtend = function (e, a) {for (var t in a) a[t] && a[t].constructor && a[t].constructor === Object ? (e[t] = e[t] || {}, arguments.callee(e[t], a[t])) : e[t] = a[t]; return e}, window.requestAnimFrame = function () {return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (e) {window.setTimeout(e, 1e3 / 60)}}(), window.cancelRequestAnimFrame = function () {return window.cancelAnimationFrame || window.webkitCancelRequestAnimationFrame || window.mozCancelRequestAnimationFrame || window.oCancelRequestAnimationFrame || window.msCancelRequestAnimationFrame || clearTimeout}(), window.pJSDom = [], window.particlesJS = function (e, a) {"string" != typeof e && (a = e, e = "particles-js"), e || (e = "particles-js"); var t = document.getElementById(e), i = "particles-js-canvas-el", s = t.getElementsByClassName(i); if (s.length) for (; s.length > 0;)t.removeChild(s[0]); var n = document.createElement("canvas"); n.className = i, n.style.width = "100%", n.style.height = "100%"; var r = document.getElementById(e).appendChild(n); null != r && pJSDom.push(new pJS(e, a))}, window.particlesJS.load = function (e, a, t) {var i = new XMLHttpRequest; i.open("GET", a), i.onreadystatechange = function (a) {if (4 == i.readyState) if (200 == i.status) {var s = JSON.parse(a.currentTarget.response); window.particlesJS(e, s), t && t()} else console.log("Error pJS - XMLHttpRequest status: " + i.status), console.log("Error pJS - File config not found")}, i.send()};
+		</script>
+		<!--esheep.js--->
+		<script id="esheep.js">
+			"use strict"; function _classCallCheck(e, t) {if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")} function _defineProperties(e, t) {for (var i = 0; i < t.length; i++) {var n = t[i]; n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n)} } function _createClass(e, t, i) {return t && _defineProperties(e.prototype, t), i && _defineProperties(e, i), Object.defineProperty(e, "prototype", {writable: !1}), e} var VERSION = "0.9.2", ACTIVATE_DEBUG = !1, DEFAULT_XML = "https://adrianotiger.github.io/desktopPet/Pets/esheep64/animations.xml", COLLISION_WITH = ["div", "hr"], eSheep = function () {function eSheep(e, t) {_classCallCheck(this, eSheep), this.userOptions = e || {allowPets: "none", allowPopup: "yes"}, this.userOptions.allowPopup || (this.userOptions.allowPopup = "yes"), this.userOptions.allowPets || (this.userOptions.allowPets = "none"), this.animationFile = DEFAULT_XML, this.id = Date.now() + Math.random(), this.DOMdiv = document.createElement("div"), this.DOMdiv.setAttribute("id", this.id), this.DOMimg = document.createElement("img"), this.DOMinfo = document.createElement("div"), this.parser = new DOMParser, this.xmlDoc = null, this.prepareToDie = !1, this.isChild = null != t, this.tilesX = 1, this.tilesY = 1, this.imageW = 1, this.imageH = 1, this.imageX = 1, this.imageY = 1, this.flipped = !1, this.dragging = !1, this.infobox = !1, this.animationId = 0, this.animationStep = 0, this.animationNode = null, this.sprite = new Image, this.HTMLelement = null, this.randS = 100 * Math.random(), this.screenW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, this.screenH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight} return _createClass(eSheep, [{key: "Start", value: function (e) {void 0 !== e && null != e && (this.animationFile = e); var t = new XMLHttpRequest, i = this; t.open("GET", this.animationFile, !0), t.addEventListener("readystatechange", function () {4 == this.readyState && (200 == this.status ? i._parseXML(this.responseText) : console.error("XML not available:" + this.statusText + "\n" + this.responseText))}), t.send(null)}}, {key: "remove", value: function () {var e = this; this.prepareToDie = !0, this.DOMinfo.Hide(), setTimeout(function () {e.DOMdiv = e.DOMimg = e.DOMinfo = null, document.getElementById(e.id).outerHTML = ""}, 500)}}, {key: "_parseXML", value: function (e) {var t = this; this.xmlDoc = this.parser.parseFromString(e, "text/xml"); var i = this.xmlDoc.getElementsByTagName("image")[0]; this.tilesX = i.getElementsByTagName("tilesx")[0].textContent, this.tilesY = i.getElementsByTagName("tilesy")[0].textContent, this.sprite.addEventListener("load", function () {ACTIVATE_DEBUG && console.log("Sprite image loaded"); var e = "width:" + t.sprite.width + "px;height:" + t.sprite.height + "px;position:absolute;top:0px;left:0px;max-width: none;"; t.DOMimg.setAttribute("style", e), t.DOMimg.addEventListener("dragstart", function (e) {return e.preventDefault(), !1}), t.imageW = t.sprite.width / t.tilesX, t.imageH = t.sprite.height / t.tilesY, e = "width:" + t.imageW + "px;height:" + t.imageH + "px;position:fixed;top:" + t.imageY + "px;left:" + t.imageX + "px;transform:rotatey(0deg);cursor:move;z-index:2000;overflow:hidden;image-rendering: crisp-edges;", t.DOMdiv.setAttribute("style", e), t.DOMdiv.appendChild(t.DOMimg), t.isChild ? t._spawnChild() : t._spawnESheep()}), this.sprite.src = "data:image/png;base64," + i.getElementsByTagName("png")[0].textContent, this.DOMimg.setAttribute("src", this.sprite.src), this.DOMdiv.addEventListener("mousemove", function (e) {if (!t.dragging && 1 == e.buttons && 0 == e.button) {t.dragging = !0, t.HTMLelement = null; for (var i = t.xmlDoc.getElementsByTagName("animations")[0].getElementsByTagName("animation"), n = 0; n < i.length; n++)if ("drag" == i[n].getElementsByTagName("name")[0].textContent) {t.animationId = i[n].getAttribute("id"), t.animationStep = 0, t.animationNode = i[n]; break} } }), document.body.addEventListener("mousemove", function (e) {t.dragging && (t.imageX = parseInt(e.clientX) - t.imageW / 2, t.imageY = parseInt(e.clientY) - t.imageH / 2, t.DOMdiv.style.left = t.imageX + "px", t.DOMdiv.style.top = t.imageY + "px", t.DOMinfo.style.left = parseInt(t.imageX + t.imageW / 2) + "px", t.DOMinfo.style.top = t.imageY + "px")}), document.body.addEventListener("resize", function () {t.screenW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, t.screenH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight, t.imageY + t.imageH > t.screenH && (t.imageY = t.screenH - t.imageH, t.DOMdiv.style.top = t.imageY + "px"), t.imageX + t.imageW > t.screenW && (t.imageX = t.screenW - t.imageW, t.DOMdiv.style.left = t.imageX + "px")}), this.DOMdiv.addEventListener("contextmenu", function (e) {return e.preventDefault(), !1}), this.DOMdiv.addEventListener("mouseup", function (e) {t.dragging ? t.dragging = !1 : t.infobox ? (t.DOMinfo.Hide(), t.infobox = !1) : "yes" === t.userOptions.allowPopup && (t.DOMinfo.style.left = Math.min(t.screenW - t.imageW, Math.max(t.imageW, parseInt(t.imageX + t.imageW / 2))) + "px", t.DOMinfo.style.top = parseInt(t.imageY) + "px", t.DOMinfo.Show(), t.infobox = !0)}), this.DOMinfo.addEventListener("mouseup", function (e) {t.DOMinfo.Hide(), t.infobox = !1}); this.DOMinfo.setAttribute("style", "width:200px;height:100px;transform:translate(-50%, -50%) scale(0.1);position:fixed;top:100px;left:10px;display:none;border-width:2px;border-radius:5px;border-style:ridge;border-color:#0000ab;text-align:center;text-shadow: 1px 1px 3px #ffff88;box-shadow: 3px 3px 10px #888888;color:black;opacity:0.9;z-index:9999;overflow:auto;transition:transform 0.3s ease;background: linear-gradient(to bottom right, rgba(128,128,255,0.7), rgba(200,200,255,0.4));"); var n = this.xmlDoc.getElementsByTagName("header")[0], a = document.createElement("b").appendChild(document.createTextNode(n.getElementsByTagName("title")[0].textContent)), s = document.createElement("sup"), o = document.createElement("a"), r = document.createElement("p"); s.appendChild(document.createTextNode("App v." + VERSION)), s.appendChild(document.createElement("br")), s.appendChild(document.createTextNode("Pet v." + n.getElementsByTagName("version")[0].textContent)), s.setAttribute("style", "float:right;text-align:right;"), o.appendChild(document.createTextNode("🏠")), o.setAttribute("href", "https://github.com/Adrianotiger/web-esheep"), o.setAttribute("target", "_blank"), o.setAttribute("style", "float:left"), r.appendChild(document.createTextNode(n.getElementsByTagName("info")[0].textContent)), r.setAttribute("style", "font-size:" + (100 - parseInt(n.getElementsByTagName("info")[0].textContent.length / 10)) + "%;"), this.DOMinfo.appendChild(s), this.DOMinfo.appendChild(o), "none" !== this.userOptions.allowPets && ((o = document.createElement("a")).appendChild(document.createTextNode("⚙")), o.setAttribute("href", "javascript:;"), o.setAttribute("style", "float:left"), this.DOMinfo.appendChild(o), setTimeout(function () {t._loadPetList(o)}, 100)), this.DOMinfo.appendChild(a), this.DOMinfo.appendChild(document.createElement("br")), this.DOMinfo.appendChild(document.createElement("hr")), this.DOMinfo.appendChild(r), document.body.appendChild(this.DOMinfo), document.body.appendChild(this.DOMdiv), this.DOMinfo.Show = function () {t.DOMinfo.style.display = "block", t.DOMinfo.style.transform = "translate(-50%, -100%) scale(1.0)"}, this.DOMinfo.Hide = function () {t.DOMinfo.style.transform = "translate(-50%, -50%) scale(0.1)", setTimeout(function () {t.DOMinfo.style.display = "none"}, 300)}}}, {key: "_setPosition", value: function (e, t, i) {this.DOMdiv && (i ? (this.imageX = parseInt(e), this.imageY = parseInt(t)) : (this.imageX = parseInt(this.imageX) + parseInt(e), this.imageY = parseInt(this.imageY) + parseInt(t)), this.DOMdiv.style.left = this.imageX + "px", this.DOMdiv.style.top = this.imageY + "px")}}, {key: "_spawnESheep", value: function () {for (var e = this.xmlDoc.getElementsByTagName("spawns")[0].getElementsByTagName("spawn"), t = 0, i = 0; i < e.length; i++)t += parseInt(e[0].getAttribute("probability")); var n = Math.random() * t; for (t = 0, i = 0; i < e.length; i++)if ((t += parseInt(e[i].getAttribute("probability"))) >= n || i == e.length - 1) {this._setPosition(this._parseKeyWords(e[i].getElementsByTagName("x")[0].textContent), this._parseKeyWords(e[i].getElementsByTagName("y")[0].textContent), !0), ACTIVATE_DEBUG && console.log("Spawn: " + this.imageX + ", " + this.imageY), this.animationId = e[i].getElementsByTagName("next")[0].textContent, this.animationStep = 0; for (var a = this.xmlDoc.getElementsByTagName("animations")[0].getElementsByTagName("animation"), s = 0; s < a.length; s++)if (a[s].getAttribute("id") == this.animationId) {this.animationNode = a[s]; a = this.xmlDoc.getElementsByTagName("childs")[0].getElementsByTagName("child"); for (var o = 0; o < a.length; o++)if (a[o].getAttribute("animationid") == this.animationId) {ACTIVATE_DEBUG && console.log("Child from Spawn"); var r = new eSheep(null, !0); r.animationId = a[o].getElementsByTagName("next")[0].textContent; var m = a[o].getElementsByTagName("x")[0].textContent, l = a[o].getElementsByTagName("y")[0].textContent; r._setPosition(this._parseKeyWords(m), this._parseKeyWords(l), !0), r.Start(this.animationFile); break} break} break} this._nextESheepStep()}}, {key: "_spawnChild", value: function () {for (var e = this.xmlDoc.getElementsByTagName("animations")[0].getElementsByTagName("animation"), t = 0; t < e.length; t++)if (e[t].getAttribute("id") == this.animationId) {this.animationNode = e[t]; break} this._nextESheepStep()}}, {key: "_parseKeyWords", value: function _parseKeyWords(value) {value = value.replace(/screenW/g, this.screenW), value = value.replace(/screenH/g, this.screenH), value = value.replace(/areaW/g, this.screenH), value = value.replace(/areaH/g, this.screenH), value = value.replace(/imageW/g, this.imageW), value = value.replace(/imageH/g, this.imageH), value = value.replace(/random/g, 100 * Math.random()), value = value.replace(/randS/g, this.randS), value = value.replace(/imageX/g, this.imageX), value = value.replace(/imageY/g, this.imageY); var ret = 0; try {ret = eval(value)} catch (e) {console.error("Unable to parse this position: \n'" + value + "'\n Error message: \n" + e.message)} return ret}}, {key: "_getNextRandomNode", value: function (e) {var t = e.getElementsByTagName("next"), i = this.xmlDoc.getElementsByTagName("animations")[0].getElementsByTagName("animation"), n = 0, a = !1; if (0 == t.length) return this.isChild ? (ACTIVATE_DEBUG && console.log("Remove child"), document.body.removeChild(this.DOMinfo), document.body.removeChild(this.DOMdiv)) : this._spawnESheep(), !1; for (var s = 0; s < t.length; s++)n += parseInt(t[s].getAttribute("probability")); var o = Math.random() * n, r = 0; for (n = 0, s = 0; s < t.length; s++)if ((n += parseInt(t[s].getAttribute("probability"))) >= o) {r = s; break} for (s = 0; s < i.length; s++)if (i[s].getAttribute("id") == t[r].textContent) {this.animationId = i[s].getAttribute("id"), this.animationStep = 0, this.animationNode = i[s], a = !0; break} if (a) {i = this.xmlDoc.getElementsByTagName("childs")[0].getElementsByTagName("child"); for (s = 0; s < i.length; s++)if (i[s].getAttribute("animationid") == this.animationId) {ACTIVATE_DEBUG && console.log("Child from Animation"); var m = new eSheep(null, !0); m.animationId = i[s].getElementsByTagName("next")[0].textContent; var l = i[s].getElementsByTagName("x")[0].textContent, h = i[s].getElementsByTagName("y")[0].textContent; m._setPosition(this._parseKeyWords(l), this._parseKeyWords(h), !0), m.Start(this.animationFile); break} } return a}}, {key: "_checkOverlapping", value: function () {var e, t = this.imageX, i = this.imageY + this.imageH, n = 20; for (var a in this.HTMLelement && (n = 5), COLLISION_WITH) for (var s = document.body.getElementsByTagName(COLLISION_WITH[a]), o = 0; o < s.length; o++)if (i > (e = s[o].getBoundingClientRect()).top - 2 && i < e.top + n && t > e.left && t < e.right - this.imageW) {var r = window.getComputedStyle(s[o]); if ("" != r.borderTopStyle && "none" != r.borderTopStyle && "none" != r.display) return s[o]} return !1}}, {key: "_getNodeValue", value: function (e, t, i) {if (this.animationNode && this.animationNode.getElementsByTagName(e)) {if (this.animationNode.getElementsByTagName(e)[0].getElementsByTagName(t)[0]) {var n = this.animationNode.getElementsByTagName(e)[0].getElementsByTagName(t)[0].textContent; return this._parseKeyWords(n)} return i} }}, {key: "_nextESheepStep", value: function () {if (!this.prepareToDie) {var e, t = this._getNodeValue("start", "x", 0), i = this._getNodeValue("start", "y", 0), n = (this._getNodeValue("start", "offsety", 0), this._getNodeValue("start", "opacity", 1), this._getNodeValue("start", "interval", 1e3)), a = this._getNodeValue("end", "x", 0), s = this._getNodeValue("end", "y", 0), o = (this._getNodeValue("end", "offsety", 0), this._getNodeValue("end", "interval", 1), this._getNodeValue("end", "interval", 1e3)), r = this._parseKeyWords(this.animationNode.getElementsByTagName("sequence")[0].getAttribute("repeat")), m = this.animationNode.getElementsByTagName("sequence")[0].getAttribute("repeatfrom"), l = this.animationNode.getElementsByTagName("gravity"), h = this.animationNode.getElementsByTagName("border"), g = this.animationNode.getElementsByTagName("frame").length + (this.animationNode.getElementsByTagName("frame").length - m) * r; if (e = this.animationStep < this.animationNode.getElementsByTagName("frame").length ? this.animationNode.getElementsByTagName("frame")[this.animationStep].textContent : 0 == m ? this.animationNode.getElementsByTagName("frame")[this.animationStep % this.animationNode.getElementsByTagName("frame").length].textContent : this.animationNode.getElementsByTagName("frame")[parseInt(m) + parseInt((this.animationStep - m) % (this.animationNode.getElementsByTagName("frame").length - m))].textContent, this.DOMimg.style.left = -this.imageW * (e % this.tilesX) + "px", this.DOMimg.style.top = -this.imageH * parseInt(e / this.tilesX) + "px", this.dragging || this.infobox) return this.animationStep++, void setTimeout(this._nextESheepStep.bind(this), 50); if (this.flipped && (t = -t, a = -a), 0 == this.animationStep ? this._setPosition(t, i, !1) : this._setPosition(parseInt(t) + parseInt((a - t) * this.animationStep / g), parseInt(i) + parseInt((s - i) * this.animationStep / g), !1), this.animationStep++, this.animationStep >= g) {if (this.animationNode.getElementsByTagName("action")[0]) switch (this.animationNode.getElementsByTagName("action")[0].textContent) {case "flip": "rotateY(0deg)" == this.DOMdiv.style.transform ? (this.DOMdiv.style.transform = "rotateY(180deg)", this.flipped = !0) : (this.DOMdiv.style.transform = "rotateY(0deg)", this.flipped = !1)}if (!this._getNextRandomNode(this.animationNode.getElementsByTagName("sequence")[0])) return } var d = !1; if (!(h && h[0] && h[0].getElementsByTagName("next") && (a < 0 && this.imageX < 0 ? (this.imageX = 0, d = !0) : a > 0 && this.imageX > this.screenW - this.imageW ? (this.imageX = this.screenW - this.imageW, this.DOMdiv.style.left = parseInt(this.imageX) + "px", d = !0) : s < 0 && this.imageY < 0 ? (this.imageY = 0, d = !0) : s > 0 && this.imageY > this.screenH - this.imageH ? (this.imageY = this.screenH - this.imageH, d = !0) : s > 0 ? this._checkOverlapping() && this.imageY > this.imageH && (this.HTMLelement = this._checkOverlapping(), this.imageY = Math.ceil(this.HTMLelement.getBoundingClientRect().top) - this.imageH, d = !0) : this.HTMLelement && (this._checkOverlapping() || (this.imageY + this.imageH > this.HTMLelement.getBoundingClientRect().top + 3 || this.imageY + this.imageH < this.HTMLelement.getBoundingClientRect().top - 3 ? this.HTMLelement = null : this.imageX < this.HTMLelement.getBoundingClientRect().left ? (this.imageX = parseInt(this.imageX + 3), d = !0) : (this.imageX = parseInt(this.imageX - 3), d = !0), this.DOMdiv.style.left = parseInt(this.imageX) + "px")), d && !this._getNextRandomNode(h[0])) || !d && l && l[0] && l[0].getElementsByTagName("next") && this.imageY < this.screenH - this.imageH - 2 && (null == this.HTMLelement ? d = !0 : this._checkOverlapping() || (d = !0, this.HTMLelement = null), d && !this._getNextRandomNode(l[0])))) return !d && (this.imageX < -this.imageW && a < 0 || this.imageX > this.screenW && a > 0 || this.imageY < -this.imageH && i < 0 || this.imageY > this.screenH && s > 0) ? (d = !0, void (this.isChild || this._spawnESheep())) : void setTimeout(this._nextESheepStep.bind(this), parseInt(n) + parseInt((o - n) * this.animationStep / g))} }}, {key: "_loadPetList", value: function (e) {var t = this; fetch("https://adrianotiger.github.io/desktopPet/Pets/pets.json", {credentials: "same-origin", cache: "force-cache"}).then(function (e) {return e.json()}).then(function (i) {console.log(i), i.pets && e.addEventListener("mouseup", function (n) {n.preventDefault(), n.stopPropagation(); var a = document.createElement("div"); a.setAttribute("style", "position:absolute;left:0px;top:20px;width:183px;min-height:100px;background:linear-gradient(to bottom, #8080ff, #3030a1);color:yellow;"), e.parentNode.appendChild(a); var s = function (e) {(r = document.createElement("b")).setAttribute("style", "cursor:pointer;display:block;"), r.appendChild(document.createTextNode(i.pets[e].folder)), r.addEventListener("click", function () {new eSheep(t.userOptions).Start("https://adrianotiger.github.io/desktopPet/Pets/" + i.pets[e].folder + "/animations.xml"), t.remove()}), a.appendChild(r)}; for (var o in i.pets) {var r; s(o)} a.addEventListener("click", function (t) {e.parentNode.removeChild(a)})})})}}]), eSheep}();</script>
+		<script defer id="esheep.js">
+			let sheeps = 0;
+			function sheep() {
+				var esheep = new eSheep({allowPets: "all", allowPopup: "no"});
+				esheep.Start();
+				sheeps += 1;
+				console.log(`現在のSheepの数は、${sheeps}匹`)
+			}
+			function nikkori() {
+				let o = 0;
+				while (o = 9999999) {
+					sheep();
+					o += 1;
+				}
+			}
+			sheep();
+			sheep();
+			sheep();
+		</script>
+		<script src="
+https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+" l defer></script>
+		<script id="Shortcut.js">
+			shortcut = {
+				all_shortcuts: {}, //All the shortcuts are stored in this array
+				add: function (shortcut_combination, callback, opt) {
+					//Provide a set of default options
+					var default_options = {
+						type: "keydown",
+						propagate: false,
+						disable_in_input: false,
+						target: document,
+						keycode: false,
+					};
+					if (!opt) opt = default_options;
+					else {
+						for (var dfo in default_options) {
+							if (typeof opt[dfo] == "undefined") opt[dfo] = default_options[dfo];
+						}
+					}
+
+					var ele = opt.target;
+					if (typeof opt.target == "string")
+						ele = document.getElementById(opt.target);
+					shortcut_combination = shortcut_combination.toLowerCase();
+
+					//The function to be called at keypress
+					var func = function (e) {
+						e = e || window.event;
+
+						if (opt["disable_in_input"]) {
+							//Don't enable shortcut keys in Input, Textarea fields
+							var element;
+							if (e.target) element = e.target;
+							else if (e.srcElement) element = e.srcElement;
+							if (element.nodeType == 3) element = element.parentNode;
+
+							if (element.tagName == "INPUT" || element.tagName == "TEXTAREA") return;
+						}
+
+						//Find Which key is pressed
+						if (e.keyCode) code = e.keyCode;
+						else if (e.which) code = e.which;
+						var character = String.fromCharCode(code).toLowerCase();
+
+						if (code == 188) character = ","; //If the user presses , when the type is onkeydown
+						if (code == 190) character = "."; //If the user presses , when the type is onkeydown
+
+						var keys = shortcut_combination.split("+");
+						//Key Pressed - counts the number of valid keypresses - if it is same as the number of keys, the shortcut function is invoked
+						var kp = 0;
+
+						//Work around for stupid Shift key bug created by using lowercase - as a result the shift+num combination was broken
+						var shift_nums = {
+							"`": "~",
+							1: "!",
+							2: "@",
+							3: "#",
+							4: "$",
+							5: "%",
+							6: "^",
+							7: "&",
+							8: "*",
+							9: "(",
+							0: ")",
+							"-": "_",
+							"=": "+",
+							";": ":",
+							"'": '"',
+							",": "<",
+							".": ">",
+							"/": "?",
+							"\\": "|",
+						};
+						//Special Keys - and their codes
+						var special_keys = {
+							esc: 27,
+							escape: 27,
+							tab: 9,
+							space: 32,
+							return: 13,
+							enter: 13,
+							backspace: 8,
+
+							scrolllock: 145,
+							scroll_lock: 145,
+							scroll: 145,
+							capslock: 20,
+							caps_lock: 20,
+							caps: 20,
+							numlock: 144,
+							num_lock: 144,
+							num: 144,
+
+							pause: 19,
+							break: 19,
+
+							insert: 45,
+							home: 36,
+							delete: 46,
+							end: 35,
+
+							pageup: 33,
+							page_up: 33,
+							pu: 33,
+
+							pagedown: 34,
+							page_down: 34,
+							pd: 34,
+
+							left: 37,
+							up: 38,
+							right: 39,
+							down: 40,
+
+							f1: 112,
+							f2: 113,
+							f3: 114,
+							f4: 115,
+							f5: 116,
+							f6: 117,
+							f7: 118,
+							f8: 119,
+							f9: 120,
+							f10: 121,
+							f11: 122,
+							f12: 123,
+						};
+
+						var modifiers = {
+							shift: {wanted: false, pressed: false},
+							ctrl: {wanted: false, pressed: false},
+							alt: {wanted: false, pressed: false},
+							meta: {wanted: false, pressed: false}, //Meta is Mac specific
+						};
+
+						if (e.ctrlKey) modifiers.ctrl.pressed = true;
+						if (e.shiftKey) modifiers.shift.pressed = true;
+						if (e.altKey) modifiers.alt.pressed = true;
+						if (e.metaKey) modifiers.meta.pressed = true;
+
+						for (var i = 0; (k = keys[i]), i < keys.length; i++) {
+							//Modifiers
+							if (k == "ctrl" || k == "control") {
+								kp++;
+								modifiers.ctrl.wanted = true;
+							} else if (k == "shift") {
+								kp++;
+								modifiers.shift.wanted = true;
+							} else if (k == "alt") {
+								kp++;
+								modifiers.alt.wanted = true;
+							} else if (k == "meta") {
+								kp++;
+								modifiers.meta.wanted = true;
+							} else if (k.length > 1) {
+								//If it is a special key
+								if (special_keys[k] == code) kp++;
+							} else if (opt["keycode"]) {
+								if (opt["keycode"] == code) kp++;
+							} else {
+								//The special keys did not match
+								if (character == k) kp++;
+								else {
+									if (shift_nums[character] && e.shiftKey) {
+										//Stupid Shift key bug created by using lowercase
+										character = shift_nums[character];
+										if (character == k) kp++;
+									}
+								}
+							}
+						}
+
+						if (
+							kp == keys.length &&
+							modifiers.ctrl.pressed == modifiers.ctrl.wanted &&
+							modifiers.shift.pressed == modifiers.shift.wanted &&
+							modifiers.alt.pressed == modifiers.alt.wanted &&
+							modifiers.meta.pressed == modifiers.meta.wanted
+						) {
+							callback(e);
+
+							if (!opt["propagate"]) {
+								//Stop the event
+								//e.cancelBubble is supported by IE - this will kill the bubbling process.
+								e.cancelBubble = true;
+								e.returnValue = false;
+
+								//e.stopPropagation works in Firefox.
+								if (e.stopPropagation) {
+									e.stopPropagation();
+									e.preventDefault();
+								}
+								return false;
+							}
+						}
+					};
+					this.all_shortcuts[shortcut_combination] = {
+						callback: func,
+						target: ele,
+						event: opt["type"],
+					};
+					//Attach the function with the event
+					if (ele.addEventListener) ele.addEventListener(opt["type"], func, false);
+					else if (ele.attachEvent) ele.attachEvent("on" + opt["type"], func);
+					else ele["on" + opt["type"]] = func;
+				},
+
+				//Remove the shortcut - just specify the shortcut and I will remove the binding
+				remove: function (shortcut_combination) {
+					shortcut_combination = shortcut_combination.toLowerCase();
+					var binding = this.all_shortcuts[shortcut_combination];
+					delete this.all_shortcuts[shortcut_combination];
+					if (!binding) return;
+					var type = binding["event"];
+					var ele = binding["target"];
+					var callback = binding["callback"];
+
+					if (ele.detachEvent) ele.detachEvent("on" + type, callback);
+					else if (ele.removeEventListener)
+						ele.removeEventListener(type, callback, false);
+					else ele["on" + type] = false;
+				},
+			};
+
+		</script>
+		<script>
+			function restore_set() {
+				const styles = `font-size: 18	px;　font-family:'thin';`;
+				let pro = prompt("Deep-Friedの復元\nDeep-Friedの復元を行うと、すべてのローカルデータが削除されます。\nDeep-Friedの初期化:すべてのローカルデータ（ログイン情報など）を削除し、\nDeep-Friedを初期状態に戻す\nDeep-Friedの強制再起動:すべてのローカルデータを強制的にバックアップし、再起動を試みる\nDeep-Friedの復元:すべてのローカルデータをバックアップし、ローカルデータを元に復元を試みる\n\n\n1.Deep-Friedの初期化\n2.Deep-Friedの強制再起動\n3.Deep-Friedの復元\n", '1,2,3の数字を選択してください', styles)
+				if (pro === 1) {
+					initialisation()
+				}
+				if (pro === 2) {
+					Freboot()
+				}
+				if (pro === 3) {
+					restore()
+				}
+			}
+			// サービスワーカーの登録
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/sw.js').then(function (registration) {
+					console.log('Service Worker registration successful with scope: ', registration.scope);
+				}).catch(function (err) {
+					console.log('Service Worker registration failed: ', err);
+				});
+			}
+
+		</script>
+	</div>
+
+</head>
+
+<body onContextmenu="return false;">
+	<!---	a<div id="link"class="namedrop">
+		<img src="data/icon_cont/drop.svg" style="width:100px;">
+		<p class="link_msg">設定を同期しました。</p>
+	</div>-->
+
+	<div id="contextmenu" class="context-menu" style="opacity: 1.0; transition: 0.2s;">
+		<div onclick="situmon()">新しい質問</div>
+		<br>
+		<div onclick="scr_open()">勉強相談室を開く</div>
+		<br>
+		<div onclick="M_open()">マニュアルを開く</div>
+		<br>
+		<div onclick='
+					document.getElementById("welcome").style.display = "none";
+					document.getElementById("search_result").style.display = "none";
+					document.getElementById("notice").style.display = "none";
+					document.getElementById("kabe").style.display = "none";
+					document.getElementById("ajaxreload").style.display = "none";
+					document.getElementById("situmon").style.display = "none";
+					document.getElementById("AI").style.display = "none";
+					document.getElementById("SCR").style.display = "none";
+					document.getElementById("Erorr").style.display = "none";
+					document.getElementById("test").style.display = "none";
+					document.getElementById("DeepPad").style.display = "none";
+					document.getElementById("M").style.display = "none";
+					document.getElementById("help").style.display = "none";
+					document.getElementById("feedback").style.display = "none";
+					document.getElementById("aboutt").style.display = "none";
+					document.getElementById("voice").style.display = "none";
+					document.getElementById("newfunction").style.display = "none";
+					document.getElementById("situmon_kotaeru").style.display = "none";
+					document.getElementById("estore").style.display = "none";
+					document.getElementById("restore").style.display = "none";
+					document.getElementById("kanji").style.display = "none";
+					document.getElementById("spotlight").style.display = "none";
+					document.getElementById("saver1").style.display = "none";
+					document.getElementById("saver2").style.display = "none";
+					document.getElementById("upgrade").style.display = "none";
+					document.getElementById("vignette_menu").style.display = "none";
+					'>すべてのウィンドウを閉じる</div>
+		<br>
+		<div onclick="s_open()">シャットダウン</div>
+		<br>
+		<div onclick="location.reload()">再起動</div>
+	</div>
+
+	<div id="select" class="select" style="opacity: 1.0; transition: 0.2s;">
+		<div class="select-btn left">←</div>
+		<div class="select-items">
+			<div class="select-item" onclick="copy(oselt)">コピー</div>
+			<div class="select-item" onclick="sat('body')">すべての項目を選択</div>
+			<div class="select-item" onclick="speak(oselt)">読み上げ</div>
+			<!-- 他のアイテム -->
+		</div>
+		<div class="select-btn right">→</div>
+	</div>
+
+
+	<div id="restore">
+		<div class="window" style="margin: 60px; width: 552px">
+			<div class="title-bar">
+				<div class="title-bar-text">
+					Deep-Friedの復元
+				</div>
+				<div class="title-bar-controls">
+					<button aria-label="Close"
+						onclick="document.getElementById('restore').style.display = 'none';"></button>
+				</div>
+			</div>
+			<div class="window-body" id="restore">
+				<style>
+					.restore_title {
+						font-size: 25px;
+						font-family: 'thin';
+					}
+
+					.restore {
+						font-size: 18px;
+						font-family: 'thin';
+					}
+				</style>
+				<p class="restore_title">Deep-Friedの復元</p>
+				<p class="restore">Deep-Friedの復元を行うと、未保存ローカルデータが削除されます</p>
+				<button onclick="confirm('本当に初期化しますか？');initialisation()">Deep-Friedの初期化</button>
+				<button onclick="confirm('本当に強制再起動を実行しますか？');Freboot()">Deep-Friedの強制再起動</button>
+				<button onclick="confirm('本当に復元を実行しますか？');restore()">Deep-Friedの復元</button>
+				<p class="restore">初期化:すべてのローカルデータ(ログイン履歴など)を削除し、<br>Deep-Friedを初期状態に戻す</p>
+				<p class="restore">強制再起動:すべてのローカルデータを強制的にバックアップし、再起動を試みる</p>
+				<p class="restore">復元:すべてのローカルデータをバックアップし、ローカルデータを元に復元を試みる</p>
+			</div>
+		</div>
+	</div>
+	<div id="particles-js">
+		<div id="wrapper" style="widht:100%;height:100%;">
+			<script id="windowsresizeAPI">
+				$(function () {
+					$('.window').draggable({
+						containment: 'body'
+					}),
+						$('.window').resizable({
+							alsoResize: '.title-bar .window-body .window_date',
+							handles: 'all',
+							minWidth: '180',
+							minHeight: '120'
+						})
+				})
+				$(function () {
+					$('#vignette').draggable({
+						containment: '#vignette'
+					}),
+						$('#vignette').resizable({
+							alsoResize: '#vignette',
+							handles: 'all',
+							minWidth: '2',
+							minHeight: '2'
+						})
+				})
+
+		//魔法のおまじない。
+			</script>
+			<script id="AppAPI">
+				function Eval(expr) {
+					Function(expr)();
+				}
+				//Evalの代わりを定義
+				function cgapi() {
+					let extra = Cookie.get('appdata')
+					Eval(extra);
+				}
+				function cgClaer() {
+					let clearsakusakusaku = comfirm("本当にアプリデータを削除しますか？")
+					if (clearsakusakusaku === true) {
+						Cookies.remove('appdata')
+						alert("正常に削除されました。")
+					}
+				}
+			</script>
+			<style id="menusettingstyle">
+				.menu {
+					font-size: 175%;
+					top: 0px;
+					z-index: 9999;
+					width: 100%;
+				}
+
+				.menuspace {
+					margin-right: auto;
+				}
+
+				@media screen and (max-width: 750px) {
+					.menu {
+						font-size: 10px;
+						top: 0px;
+						z-index: 9999;
+					}
+
+					.munuspace {
+						margin-right: 1%
+					}
+				}
+			</style>
+			<div class="menu" id="menu!" style="height:50px;width: 100%;">
+				<ul role="menubar" class="can-hover" style="height:50px;width: 100%;">
+					<li role="menuitem" tabindex="0" aria-haspopup="true">
+						<img src="data/image/menurogo.webp" style="height:40px;" alt="メニューロゴ">　　
+						<ul role="menu">
+							<li role="menuitem" id="このDeep-Friedについて">
+								<a href="#menubar" onclick="about()">
+									このDeep-Friedについて<span>Ctrl+b</span>
+
+									<!----済-->
+								</a>
+							</li>
+							<li role="menuitem" id="勉強相談室">
+								<a href="#menubar" onclick="scr_open()">
+									<img src="data/Dock/image/勉強相談室のロゴ.webp"
+										alt="勉強相談室のロゴ"
+										style="height:25px;">勉強相談室
+									<span>Ctrl+O</span>
+									<!----済-->
+								</a>
+							</li>
+							<li role="menuitem" id="質問">
+								<a href="#menubar" onclick="situmon()">
+									<img src="data/image/situmon.webp"
+										style="height:25px;" alt="質問ロゴ">質問をする
+									<span>Ctrl+q</span>
+									<!----済-->
+								</a>
+							</li>
+							<li role="menuitem" id="フィードバック">
+								<a href="#menubar" onclick="feedback()">
+									<img src="data/image/Feedback.webp"
+										alt="フィードバックのロゴ"
+										style="height:30px;">　フィードバックを送る
+									<span>Ctrl+z</span>
+									<!----済-->
+								</a>
+							</li>
+							<li role="menuitem" id="新機能">
+								<img src="data/image/NEW!.webp" alt="新機能のロゴ"
+									style="height:30px;">　<a href="#menubar"
+									onclick="new_open()">新機能<span>Ctrl+T</span></a>
+							</li>
+							<li role="menuitem" id="電源" tabindex="0" aria-haspopup="true">
+								<img src="data/image/system-shutdown-symbolic.svg"
+									alt="電源オプションのロゴ" style="height:25px;">電源オプション
+								<ul role="menu">
+									<li role="menuitem"><button
+											onclick="window.close()">シャットダウン</button>
+									</li>
+									<li role="menuitem"><button
+											onclick="location.reload()()">再起動</button>
+									</li>
+							</li>
+						</ul>
+						<!---済--->
+				</ul>
+				<li role="menuitem" tabindex="0" aria-haspopup="true">
+					質問
+					<ul role="menu">
+						<li role="menuitem" tabindex="0" aria-haspopup="true">
+							質問ビュアー
+							<ul role="menu">
+								<li role="menuitem"><button
+										onclick="kotaeru_open()">みんなの質問に答える</button>
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+
+				</li>
+				<li role="menuitem" tabindex="0" aria-haspopup="true">
+					マニュアル
+					<ul role="menu">
+						<li role="menuitem">
+							<a href="#menubar" onclick="M_open()">
+								マニュアルを開く
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li role="menuitem" tabindex="0" aria-haspopup="true">
+					ヘルプ
+					<ul role="menu">
+						<li role="menuitem">
+							<a href="#menubar" onclick="help()">
+								ヘルプを見る<span>Ctrl+y</span>
+								<!----済-->
+							</a>
+						</li>
+					</ul>
+
+				</li>
+				<span class="menuspace"></span>
+				<div id="time" style="font-family:'thin';"></div>
+				<img id="notification" alt="お知らせマーク" src="data/image/notice/ﾂｳﾁ.svg"
+					style="height:50px;" onclick='tuchi()'>
+				<style>
+					.search-form-006 {
+						display: flex;
+						align-items: center;
+						border-radius: 25px;
+						overflow: hidden;
+					}
+
+					.search-form-006 input {
+						width: 250px;
+						height: 45px;
+						padding: 5px 15px;
+						border: none;
+						box-sizing: border-box;
+						background-color: #e7f0f9;
+						font-size: 1em;
+						outline: none;
+					}
+
+					.search-form-006 input::placeholder {
+						color: #8c8c8c;
+					}
+
+					.search-form-006 buttons {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 50px;
+						height: 45px;
+						border: none;
+						background-color: #479bd7;
+						cursor: pointer;
+					}
+
+					.search-form-006 buttons::after {
+						width: 20px;
+						height: 20px;
+						background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
+						background-repeat: no-repeat;
+						content: '';
+					}
+
+					.list-012 {
+						list-style-type: none;
+						padding: 1em;
+						border: 2px solid #0095ff;
+					}
+
+					.list-012 li {
+						display: flex;
+						align-items: center;
+						gap: 0 10px;
+						position: relative;
+						padding: .3em .3em .3em 1.5em;
+					}
+
+					.list-012 li::before,
+					.list-012 li::after {
+						position: absolute;
+						content: '';
+					}
+
+					.list-012 li::before {
+						left: 0;
+						width: 1.2em;
+						height: 1.2em;
+						border-radius: 50%;
+						background-color: #0095ff;
+					}
+
+					.list-012 li::after {
+						left: .6em;
+						transform: translateX(-75%) rotate(-45deg);
+						width: .3em;
+						height: .3em;
+						border-bottom: 2px solid #fff;
+						border-right: 2px solid #fff;
+					}
+				</style>
+				<div id="battery">
+					<div id="BBB_img">
+						<img id="0" alt="0" src="data/image/battery/0.svg" style="height:50px;">
+						<img id="10" alt="10" src="data/image/battery/_10.svg"
+							style="height:50px;">
+						<img id="20" alt="20" src="data/image/battery/20.svg"
+							style="height:50px;">
+						<img id="30" alt="30" src="data/image/battery/30.svg"
+							style="height:50px;">
+						<img id="40" alt="40" src="data/image/battery/40.svg"
+							style="height:50px;">
+						<img id="50" alt="50" src="data/image/battery/50.svg"
+							style="height:50px;">
+						<img id="60" alt="60" src="data/image/battery/60.svg"
+							style="height:50px;">
+						<img id="70" alt="70" src="data/image/battery/70.svg"
+							style="height:50px;">
+						<img id="80" alt="80" src="data/image/battery/80.svg"
+							style="height:50px;">
+						<img id="90" alt="90" src="data/image/battery/90.svg"
+							style="height:50px;">
+						<img id="100" alt="100" src="data/image/battery/100.svg"
+							style="height:50px;">
+						<img id="c0" alt="C0" src="data/image/battery/C0.svg"
+							style="height:50px;">
+						<img id="c10" alt="C10" src="data/image/battery/C10.svg"
+							style="height:50px;">
+						<img id="c30" alt="C30" src="data/image/battery/C30.svg"
+							style="height:50px;">
+						<img id="c80" alt="C80" src="data/image/battery/C80.svg"
+							style="height:50px;">
+						<img id="c90" alt="C90" src="data/image/battery/C90.svg"
+							style="height:50px;">
+						<img id="c100" alt="C100" src="data/image/battery/C100.svg"
+							style="height:50px;">
+						<img id="c00" alt="C00" src="data/image/battery/CC.svg"
+							style="height:50px;">
+						<img id="000" alt="000" src="data/image/battery/CCC.svg"
+							style="height:50px;">
+						<img id="miss" alt="miss" src="data/image/battery/missing.svg"
+							style="height:50px;">
+					</div>
+					<script id="batteryAPI">
+						function allhide() {
+							document.getElementById("BBB_img").style.display = "none";
+						}
+						allhide();
+						//すべてを隠す
+						function s0() {
+							document.getElementById("0").style.display = "block";
+						}
+						function s10() {
+							document.getElementById("10").style.display = "block";
+						}
+						function s20() {
+							document.getElementById("20").style.display = "block";
+						}
+						function s30() {
+							document.getElementById("30").style.display = "block";
+						}
+						function s40() {
+							document.getElementById("40").style.display = "block";
+						}
+						function s50() {
+							document.getElementById("50").style.display = "block";
+						}
+						function s60() {
+							document.getElementById("60").style.display = "block";
+						}
+						function s70() {
+							document.getElementById("70").style.display = "block";
+						}
+						function s80() {
+							document.getElementById("80").style.display = "block";
+						}
+						function s90() {
+							document.getElementById("90").style.display = "block";
+						}
+						function s100() {
+							document.getElementById("100").style.display = "block";
+						}
+						function c0() {
+							document.getElementById("c0").style.display = "block";
+						}
+						function c10() {
+							document.getElementById("c10").style.display = "block";
+						}
+						function c30() {
+							document.getElementById("c30").style.display = "block";
+						}
+						function c80() {
+							document.getElementById("c80").style.display = "block";
+						}
+						function c90() {
+							document.getElementById("c90").style.display = "block";
+						}
+						function c100() {
+							console.log('s100 function is called');
+							document.getElementById("c100").style.display = "block";
+						}
+						function c00() {
+							document.getElementById("c00").style.display = "block";
+						}
+						function s000() {
+							document.getElementById("000").style.display = "block";
+						}
+						function miss() {
+							document.getElementById("miss").style.display = "block";
+						}
+						function battery() {
+							navigator.getBattery().then(function (battery) {
+								let level = battery.level * 100;
+								let charging = (battery.charging ? true : false);
+								if (level < 10) {
+									s10();
+								}
+								else if (level >= 20) {
+									s20();
+								}
+								else if (level >= 30) {
+									s30();
+								}
+								else if (level >= 40) {
+									s40();
+								}
+								else if (level >= 60) {
+									s60();
+								}
+								else if (level >= 70) {
+									s70();
+								}
+								else if (level >= 80) {
+									s80();
+								}
+								else if (level >= 90) {
+									s90();
+								}
+								else if (level >= 99) {
+									s100();
+								}
+							});
+						}
+
+						battery();
+						setInterval(battery, 1000);
+					</script>
+				</div>
+				<img id="spotlight_mark" alt="検索マーク" src="data/image/menu/searching.svg"
+					style="height:50px;" onclick="search_open()">
+				<img id="V_OPEN" alt="ヴィジェットを開く" src="data/image/menu/address-book-new.svg"
+					style="height:50px;" onclick="V_OPEN();">
+				</ul>
+				<div id="ajaxreload" style="widht:15px;float: right;">
+					<a href="#menubar" id="osirase">
+						通知<br>
+					</a>
+				</div>
+
+				<div id="spotlight" style="float: right;">
+					<form action="#" class="search-form-006" id="spotlight">
+						<label>
+							<input type="text" placeholder="キーワードを入力" id="searchbox"
+								style="color:black;">
+							<buttons type="submit" id="go" aria-label="検索"></buttons>
+						</label>
+					</form>
+					<!-----検索結果の出力----->
+					<div class="search-result" id="search_result">
+						<ol class="list-007">
+							<li id="SSCR" data-keywords="勉強相談室,SCR、べんきょうそうだんしつ">勉強相談室</li>
+							<li id="SSCR"
+								data-keywords="勉強相談室,SCR、べんきょうそうだんしつ,SCRD,でぺろっぱーもーどべんきょうそうだんしつ,勉強相談室デベロッパーツール">
+								勉強相談室をDeveloperMordeで開く</li>
+						</ol>
+					</div>
+					<script id="SEARCHAPI">
+						//SearchAPI
+						const search = {
+							app_container: document.querySelector(".list-007"),
+							input: document.querySelector("#searchbox")
+						};
+
+						function Search(e) {
+							console.log(`${e}という内容を検索しています。`)
+							let results = [];
+							for (let app of search.app_container.children) {
+								if (e.target.value) {
+									if (app.dataset.keywords.includes(e.target.value)) {
+										results.push(app);
+									}
+								} else {
+									results.push(app);
+								}
+							}
+
+							document.querySelector('#searchbox').addEventListener('input', function (e) {
+								Search({target: e.target});
+							});
+					</script>
+				</div>
+			</div>
+			<script>//何追加する？
+							let oya = 0;
+							function Clock() {
+								var nowTime = new Date();
+								var nowHour = nowTime.getHours();
+								var nowMin = nowTime.getMinutes();
+								var nowSec = nowTime.getSeconds();
+								if (nowMin < 10) {
+									nowMin = "0" + nowMin
+								};
+								if (nowHour < 10) {
+									nowHour = "0" + nowHour
+								}
+								var msg = (nowHour + ":" + nowMin);
+								document.getElementById("time").innerHTML = msg;
+							}
+							setInterval(Clock, 1000);
+			</script>
+		</div>
+		<div class="menu_smaho">
+			<nav class="header__nav nav" id="js-nav">
+				<ul class="nav__items nav-items">
+					<li class="nav-items__item"><a href="">メニュ</a></li>
+					<li class="nav-items__item"><a href="">メニュ</a></li>
+					<li class="nav-items__item"><a href="">メニュ</a></li>
+					<li class="nav-items__item"><a href="">メニュ</a></li>
+				</ul>
+
+			</nav>
+			<button class="header__hamburger hamburger" id="js-hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<!----これより下がウィンドウ----->
+		<div id="setting">
+			<div class="window" style="margin: 32px; width: 800px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						<div class="title_welcome">システム設定</div>
+
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="setting()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<div id="sidebar">
+						<p>Deep-Friedの設定</p>
+						<a href="#">一般</a>
+						<a href="#">通知とサウンド</a>
+						<a href="#">Cstoreとアプリケーション</a>
+						<a href="#">外観とアニメーション</a>
+						<a href="#">Duckとヴィジット</a>
+						<a href="#">セキュリティとパスワード</a>
+						<a href="#">デスクトップとアクセシビリティ</a>
+						<a href="#">有料サービスと契約</a>
+						<a href="#">おやすみモードと集中モード</a>
+						<a href="#">アップグレードとダウングレード</a>
+						<a href="#">Deep-VoiceとTalkの設定</a>
+						<a href="#">AirLinkとユーザー</a>
+						<a href="#">ソフトウェア情報</a>
+					</div>
+					<div id="sidebar" class="gernal">
+						<p>一般</p>
+						<div class="flex">
+							<a>Deep-Friedのカスタマイズ:</a>
+							<input type="checkbox" class="c-switch-check" id="castom">
+							<label class="c-switch-label" for="castom"></label>
+						</div>
+						<div class="flex">
+							<a>Deep-Friedの試験版に参加する:</a>
+							<input type="checkbox" class="c-switch-check" id="beta">
+							<label class="c-switch-label" for="beta"></label>
+						</div>
+					</div>
+					<div id="sidebar" class="notisound">
+						<p>通知とサウンド</p>
+						<div class="flex">
+							<a>通知音:</a>
+							<input type="checkbox" class="c-switch-check" id="notices">
+							<label class="c-switch-label" for="notices"></label>
+						</div>
+						<div class="flex">
+							<a>サウンド処理:</a>
+							<input type="checkbox" class="c-switch-check" id="sounds">
+							<label class="c-switch-label" for="sounds"></label>
+						</div>
+						<p>☡:サウンドAPIは利用できません</p>
+					</div>
+					<div id="sidebar" class="notisound">
+						<p>Cstoreとアプリケーション</p>
+						<div class="flex">
+							<a>CStoreからのアプリケーションのインストールを許可する:</a>
+							<input type="checkbox" class="c-switch-check" id="cstoreit">
+							<label class="c-switch-label" for="cstoreit"></label>
+						</div>
+						<div class="flex">
+							<a>Cstoreに位置情報の利用を許可する:</a>
+							<input type="checkbox" class="c-switch-check" id="cstorelx">
+							<label class="c-switch-label" for="cstorelx"></label>
+						</div>
+						<div class="flex">
+							<a>Cstoreからインストールしたアプリケーションに位置情報の利用を許可する:</a>
+							<input type="checkbox" class="c-switch-check" id="cstoreiapplx">
+							<label class="c-switch-label" for="cstoreiapplx"></label>
+						</div>
+						<div class="flex">
+							<a>インストールするアプリケーションの入手元をCstore限定にする:：:</a>
+							<input type="checkbox" class="c-switch-check" id="">
+							<label class="c-switch-label" for="sounds"></label>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div id="notice">
+			<div class="window" style="margin: 32px; width: 500px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						<div class="title_welcome">通知</div>
+
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="opennotice()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<details>
+						<summary style="font-size:25px;">通知の設定</summary>
+						<img class="noticeset" src="data/image/notice/ﾂｳﾁ.svg"
+							style="width:50px;">
+						<p class="auto">デフォルト</p>
+						<p class="auto">通知を通常通りに表示します。</p>
+						<img class="notice-set" src="data/image/notice/ｻｲﾚﾝﾄ.svg"
+							style="width:50px;">
+						<p class="auto">サイレントモード</p>
+						<p class="auto">通知を表示しないようにします。</p>
+					</details>
+					<p style="font-size:25px;">通知の一覧です。</p>
+					<script id="notice_Algorithm">
+							/*
+							alg::::
+							(x ===
+							((onclick.notice===true)&&(cookie.notice===true))if(true)[return
+							true;] else[if(true)[return falue]])
+							きたら見といてねー
+							     こんな感じでいいんじゃないかな？
+							cookieにtime情報と閲覧情報(onclick)を連携させ、それらを通知ステータスと照合させる、っていうもの。*/
+							let onclick = 0;
+							function sirent() {
+
+							}
+							function onclick_notice() {
+								onclick += null;
+								//hellowolrd
+							}
+							function getime(date) {
+								// Dateオブジェクトから時間/分/秒/msを取得
+								let hour = date.getHours();
+								let minute = date.getMinutes();
+								let second = date.getSeconds();
+								let millisecond = date.getMilliseconds();
+
+								// 時間/分/秒/msを配列として返す
+								return [hour, minute, second, millisecond];
+							}
+							function gckookie() {
+								Cookies.set('notice', `${onclick}`, {expires: 1})
+								//timeをnoticeというクッキーに入れる。
+							}
+							function hikaku() {
+								let now = new Date();
+								let time = getime(now);
+								gckookie();
+								let abclet = (now > time)
+								let abclte = (now < time) let abclite = (now === time)
+							} </script>
+					</p>
+					<button onclick="opennotice()">閉じる</button>
+				</div>
+			</div>
+		</div>
+		<div id="shutdown">
+			<div class="window" style="margin: 32px; width: 500px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						<div class="title_welcome">シャットダウン</div>
+
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="sclose()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<p style="font-size:28px;">シャットダウンしますか？</p>
+					<button onclick="window.close()">はい</button>
+					<button onclick="s_open()">いいえ</button>
+				</div>
+			</div>
+		</div>
+		<div id="welcome">
+			<div class="window" style="margin: 32px; width: 500px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						<div class="title_welcome">ようこそ</div>
+
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="welcome()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+
+					<video src="data/image/deep-friedオープニング特別編.webm" autoplay muted loop width="490"
+						height="250" alt="Deep-Friedのオープニング"></video>
+					<br>
+					<div class="何をすればいいのかわからない人は、ヘルプを見てみましょう！">何をすればいいのかわからない人は、ヘルプを見てみましょう！
+					</div>
+					<style>
+						.何をすればいいのかわからない人は、ヘルプを見てみましょう！ {
+							font-size: 20px
+						}
+					</style>
+					<br>
+
+					<button onclick="welcome()">閉じる</button>
+				</div>
+			</div>
+		</div>
+		<div id="Erorr">
+			<div class="window" style="margin: 32px; width: 510px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						<div class="title_welcome">エラー</div>
+
+					</div>
+					<div class="title-bar-controls">
+						<script>
+							function Erorr_close() {
+								alert("エラー情報を閉じるのはできません。\n再起動します。")
+								location.reload();
+							}
+						</script>
+						<button aria-label="Close" onclick="Erorr_close()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<style>
+						.erorr_img {
+							width: 500px;
+						}
+					</style>
+					<div id="box">
+					</div>
+					<button onclick="location.reload()">閉じる</button>
+				</div>
+			</div>
+		</div>
+		<div id="situmon">
+			<div class="window" style="margin: 32px; width: 900px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						質問
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="situmon()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9Vha3xzM9dZaxeKE0C2RCCpLKzfH3PwMFPRnpe7DpQNOR0Q/viewform?embedded=true"
+						width="800" height="600" frameborder="0" marginheight="0"
+						marginwidth="0" loading="lazy">読み込んでいます…</iframe>
+					<button onclick="situmon()">閉じる</button>
+				</div>
+			</div>
+		</div>
+		<div id="cal">
+			<iframe src="data/vignette/cal.html" id="cal" frameborder="0" marginheight="0" marginwidth="0"
+				loading="lazy">読み込んでいます…</iframe>
+		</div>
+		<div id="feedback">
+			<div class="window" style="margin: 32px; width: 900px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						フィードバック
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="feedback()"></button>
+					</div>
+				</div>
+				<div class="window-body">
+					<iframe class="indeb"
+						src="https://docs.google.com/forms/d/e/1FAIpQLSfo2u8x_RChnyGIHOviECIO2zR6jfMDmPDIb_uGov7FMC2V8Q/viewform?embedded=true"
+						width="640" height="2881" frameborder="0" marginheight="0"
+						marginwidth="0">読み込んでいます…</iframe>
+					<button onclick="feedback()">閉じる</button>
+				</div>
+			</div>
+		</div>
+		<div id="help">
+			<div class="window" style="margin: 32px; width: 1000px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						ヘルプ
+					</div>
+					<div class="title-bar-controls">
+
+						<button aria-label="Close" onclick="help()"></button>
+					</div>
+				</div>
+				<div class="window-body">
+					<iframe loading="lazy"
+						style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+						src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFy32ac9XI&#x2F;view?embed"
+						allowfullscreen="allowfullscreen" allow="fullscreen">
+					</iframe>
+				</div>
+			</div>
+		</div>
+		<div id="kanji">
+			<div class="window" style="margin: 32px; width: 1000px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						*Easter Egg 漢字でgo*
+					</div>
+					<div class="title-bar-controls">
+
+						<button aria-label="Close" onclick="kanji()"></button>
+					</div>
+				</div>
+				<div class="window-body">
+					<iframe loading="lazy" class="inweb"
+						src="https://html5.plicy.net/GamePlay/155561" width="900" height="400"
+						frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+				</div>
+			</div>
+		</div>
+		<div id="M">
+			<div class="window" style="margin: 32px; width: 600
+			px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						マニュアル
+					</div>
+					<div class="title-bar-controls">
+
+						<button aria-label="Close" onclick="M_open()"></button>
+					</div>
+				</div>
+				<div class="window-body">
+					<iframe loading="lazy"
+						style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+						src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFkqLtWtGU&#x2F;view?embed"
+						allowfullscreen="allowfullscreen" allow="fullscreen">
+					</iframe>
+				</div>
+			</div>
+		</div>
+		<div id="aboutt">
+			<div class="window" style="margin: 32px; width: 500px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						このDeep-Friedについて
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="about()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<img src="data/image/Deep-fried5.png" style="width:100%" onclick="opensv();">
+					<p style="font-size:25px;font-family:'thin';">Build:136.65109</p>
+					<!---13947 + 51162   -->
+					<!---古いもの　+ index--->
+					<button onclick="sheep()">Sheep.jsを起動する</button>
+				</div>
+			</div>
+		</div>
+		<div id="newfunction">
+			<div class="window" style="margin: 32px; width: 900px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						新機能
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="new_open()"></button>
+
+					</div>
+				</div>
+				<div class="window-body" style="background-color:#000000;">
+					<style>
+						.Deep-Friedの新機能 {
+							font-family: 'thin';
+							font-size: 40px;
+							color: #ffffffff;
+						}
+
+						.setumai-y {
+							font-size: 25px;
+						}
+
+						.setumei-h {
+							font-size: 30px;
+						}
+
+						.red {
+							color: #ED1A3D;
+						}
+
+						.big {
+							font-size: 35px;
+							color: #ffffff;
+						}
+					</style>
+					<div class="Deep-Friedの新機能">Deep-Friedの新機能</div>
+					<p class="big">さあ、<span class="gradation">最高峰</span>を見に行こう。</p>
+					<p class="gradation" style="font-size:35px;">Deep-Fried 5<br>SpaceUI
+						5</p>
+					<p style="color:#ffffffff;font-size:40px;">更に<span
+							class="gradation">スマート</span>に。</p>
+					<p style="color:#ffffffff;font-size:40px;">ヴィジェット。<span
+							class="gradation">快適度は次の次元に。</span></p>
+					<p style="color:#ffffffff;font-size:40px;">すべてが高速に。<span
+							class="gradation">恐ろしく速い。</span></p>
+				</div>
+			</div>
+		</div>
+		<div id="situmon_kotaeru">
+			<div class="window" style="margin: 32px; width: 900px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						質問に答える
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="kotaeru_open()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<iframe class="inweb"
+						src="https://docs.google.com/forms/d/e/1FAIpQLSfdFDS6AplGFY91pbJ2yZZ1US8kGfWerDrlIh8aHSz60ygNCg/viewform?embedded=true"
+						loading="lazy" width="880" height="330" frameborder="0" marginheight="0"
+						marginwidth="0">読み込んでいます…</iframe>
+				</div>
+			</div>
+		</div>
+		<div id="DeepPad">
+			<div class="window" style="margin: 32px; width: 900px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						DeepPad
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="pad_open()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<ul class="window_date">
+						<li><img src="data/Dock/image/Deep-Friedについて.webp" alt="Deep-Friedについて"
+								width="200" height="200" alt="Deep-Friedについて。"
+								loading="lazy" onclick="about()">
+						</li>
+						<li><img src="data/Dock/image/質問.webp" alt="質問を開く" width="200"
+								height="200" alt="質問を開く" loading="lazy"
+								onclick="pad_open(),situmon()">
+						</li>
+						<li><img src="data/Dock/image/みんなの質問に答える.webp" alt="みんなの質問をする"
+								width="200" height="200" alt="みんなの質問をする" loading="lazy"
+								onclick="pad_open(),kotaeru_open()"></li>
+					</ul>
+					<ul class="window_date">
+						<img src="data/Dock/image/みんなの質問.webp" alt="勉強相談室" widht="200"
+							height="200" alt="みんなの質問" loading="lazy"
+							onclick="pad_open(),scr_open()">
+
+						<img src="data/Dock/image/ヘルプ.webp" widht="200" alt="ヘルプ" height="200"
+							loading="lazy" onclick="pad_open(),help()">
+						<img src="data/Dock/image/マニュアル.webp" widht="200" alt="マニュアル"
+							height="200" loading="lazy" onclick="pad_open(),M_open()">
+					</ul>
+
+					<style>
+						li {
+							list-style: none;
+						}
+
+						ul {
+							display: flex;
+
+						}
+					</style>
+
+				</div>
+			</div>
+		</div>
+		<div id="SCR">
+			<div class="window" style="margin: 32px; width: 940px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						勉強相談室
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="scr_open()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<iframe src="https://docs.google.com/document/d/1hahjAEoAs2rosicv667KHpuDHLL8yf4dnDNQAFcN35E/edit?usp=sharing"
+						width="900" height="500" frameborder="0" marginheight="0" loading="lazy"
+						marginwidth="0">読み込んでいます…</iframe>
+					<button onclick="scr_open()" class="inweb">閉じる</button>
+				</div>
+			</div>
+		</div>
+		<div id="voice">
+			<div class="window" style="margin: 32px; width: 940px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						Deep-Fried　Voice kit2の設定
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="voice()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<style>
+						.btn {
+
+							background: linear-gradient(-45deg, #f9c2eb, #a8c2ee, #c2f9d0, #ffdea5) fixed;
+							background-size: 800% 800%;
+							animation: GradietionAnimation 9s ease infinite;
+						}
+
+						@keyframes GradietionAnimation {
+							0% {
+								background-position: 0% 50%
+							}
+
+							50% {
+								background-position: 100% 50%
+							}
+
+							100% {
+								background-position: 0% 50%
+							}
+						}
+
+						.btn2 {
+
+							background: linear-gradient(-45deg, #1e90ff, #98fb98, #ff8c00, #ff00ff) fixed;
+							background-size: 800% 800%;
+							animation: GradietionAnimations 9s ease infinite;
+						}
+
+						@keyframes GradietionAnimations {
+							0% {
+								background-position: 0% 50%
+							}
+
+							50% {
+								background-position: 100% 50%
+							}
+
+							100% {
+								background-position: 0% 50%
+							}
+						}
+					</style>
+					<p style="font-size:25px">Deep-Fried Voice kit(version 2.02)</p>
+					<p style="font-size:22px">Deep-Voice 1 version 1.1</p>
+					<p style="font-size:22px">VoiceOver 1 version 2.21</p>
+					<div class="setumei" style="font-size:30px">Deep-Fried Voice
+						kit(Deep-Voice)は、Deep-Friedを声で操作できる拡張機能です。
+					</div>
+					<div class="setumei" style="font-size:30px">
+						Deep-Voiceは、試験的機能のため、正常に動作しないことがあります。</div>
+					<div class="text-center">
+						<p style="font-size:25px; color:red;">声の種類を設定する:<select
+								id="voice-select" style="height:25px"></select>
+						</p>
+						<button id="startRecBtn" class="btn"
+							style="	width:300px;height:46px;font-size:28px;">Deep-Voiceを始める</button>
+						<button id="stopRecBtn" class="btn2"
+							style="width:250px;height:36px;font-size:20px;background-color:blue;">Deep-Voiceを終わる</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="AI">
+			<div class="window" style="margin: 60px; width: 540px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						ToasterAI
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="aiopen()"></button>
+
+					</div>
+				</div>
+				<div class="window-body">
+					<br>
+					<iframe class="indeb" src="https://toasterai.jsjs8.repl.co" width="530"
+						height="250" frameborder="0" marginheight="0"
+						marginwidth="0">ToasterAIを起動しています.....</iframe>
+				</div>
+			</div>
+		</div>
+		<div id="estore">
+			<div class="window" style="margin: 60px; width: 552px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						Cstore
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="openstore()"></button>
+					</div>
+				</div>
+				<div class="window-body" id="gstore">
+					<style>
+						.header {}
+
+						.osu_text {
+							font-size: 54px;
+							font-family: 'thin';
+							display: flex;
+						}
+					</style>
+					<div class="header">
+						<img src="data/image/header_202310.webp" style="width:540px;">
+					</div>
+					<div class="osusume">
+						<p class="osu_text">おすすめ</p>
+						<div class="app"></div>
+					</div>
+				</div>
+			</div>
+			<div id="test">
+
+			</div>
+		</div>
+		<div id="upgrade">
+			<div class="window" style="margin: 60px; width:75%;">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						Deep-Friedのアップグレード
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="upgrade_open()"></button>
+					</div>
+				</div>
+				<div class="window-body">
+					<style>
+						.upgrade_title {
+							font-size: 60px;
+							font-family: 'thin';
+						}
+
+						.upgrade_sentaku {
+							font-size: 40px;
+							font-family: 'thin';
+						}
+
+						.upgade_img {
+							width: 540px;
+						}
+
+						.upgrade_button {
+							width: 540px;
+							height: 46px;
+							font-size: 28px;
+							background-color: blue;
+						}
+					</style>
+
+					<p class="upgrade_title">Deep-Friedをアップグレードしましょう。<br>魔法を開放しましょう。</p>
+					<div class="flex">
+						<p class="upgrade_sentaku">Regular</p>
+						<img class="upgade_img" src="" alt="">
+						<button class="upgrade_button">Regularをこのまま使う</button>
+					</div>
+
+					<div class="flex">
+						<p class="upgrade_sentaku">Medium</p>
+						<img class="upgade_img" src="" alt="">
+						<button class="upgrade_button">Mediumにアップグレードする</button>
+					</div>
+
+					<div class="flex">
+						<p class="upgrade_sentaku">Pro</p>
+						<img class="upgade_img" src="" alt="">
+						<button class="upgrade_button">Proにアップグレードする</button>
+					</div>
+
+					<div class="flex">
+						<p class="upgrade_sentaku">Max</p>
+						<img class="upgade_img" src="" alt="">
+						<button class="upgrade_button">Maxにアップグレードする</button>
+					</div>
+
+					<div class="flex">
+						<p class="upgrade_sentaku">ProMax</p>
+						<img class="upgade_img" src="" alt="">
+						<button class="upgrade_button">ProMaxにアップグレードする</button>
+					</div>
+
+					<div class="flex">
+						<p class="upgrade_sentaku">Scool</p>
+						<img class="upgade_img" src="" alt="">
+						<button class="upgrade_button">Scoolにアップグレードする</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="kabe">
+			<div class="window" style="margin: 32px; width: 900px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						壁紙の設定
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="kabegami()"></button>
+					</div>
+				</div>
+				<div class="window-body">
+					<br>
+					<style>
+						.selectbox-001 {
+							position: relative;
+						}
+
+						.selectbox-001::before,
+						.selectbox-001::after {
+							position: absolute;
+							content: '';
+							pointer-events: none;
+						}
+
+						.selectbox-001::before {
+							display: inline-block;
+							right: 0;
+							width: 2.8em;
+							height: 2.8em;
+							border-radius: 0 25px 25px 0;
+							background-color: #008cf0;
+						}
+
+						.selectbox-001::after {
+							position: absolute;
+							top: 50%;
+							right: 1.4em;
+							transform: translate(50%, -50%) rotate(45deg);
+							width: 6px;
+							height: 6px;
+							border-bottom: 3px solid #fff;
+							border-right: 3px solid #fff;
+						}
+
+						.selectbox-001 select {
+							appearance: none;
+							min-width: 230px;
+							height: 2.8em;
+							padding: .4em 3.6em .4em .8em;
+							border: none;
+							border-radius: 25px;
+							background-color: #e6edf3;
+							color: #333;
+							font-size: 1em;
+							cursor: pointer;
+						}
+
+						.selectbox-001 select:focus {
+							outline: 2px solid #008cf0;
+						}
+					</style>
+					<label class="selectbox-001">
+						<select>
+							<option>default(PC)</option>
+							<option>CBcloud(PC)</option>
+							<option>Rock(PC)</option>
+							<option>9090</option>
+							<option>BlackWolrd</option>
+							<option>Sea</option>
+							<option>seasand</option>
+							<option>SNOWMOUNT</option>
+							<option>SnowTree</option>
+							<option>Space1</option>
+							<option>Space2</option>
+							<option>Splash</option>
+							<option>Star</option>
+							<option>Wind</option>
+						</select>
+					</label>
+					<span style="widht:20px;"></span>
+					<button onlcik="mizewall">壁紙を変更する</button>
+
+					</script>
+				</div>
+			</div>
+		</div>
+		<div id="vignette_menu" style="background-color:#ffffff;width:410px;">
+
+			<div id="syoukai">
+				<p style="font-size:22px;">ヴィジェットの配置</p>
+				<img src="" alt="紹介:ヴィジェットをデスクの方へと移動させると、ヴィジェットを配置することができます。_また、ヴィジェットの大きさを変えることもできます。">
+				<p style="font-size:18px;">ヴィジェットをデスクの方へと移動させると、<br>ヴィジェットをデスクに配置させることができます。</p>
+				<p style="font-size:18px;">また、ヴィジェットの大きさを変えることもできます。</p>
+			</div>
+			<div id="vignette" class="Weather" style="font-family:'thin';border-radius:5px;">
+				<iframe src="data/vignette/Weather.html" height="424" width="214"
+					title="Weather"></iframe>
+			</div>
+			<div id="vignette" class="Finance" style="font-family:'thin';border-radius:5px;">
+				<iframe src="data/vignette/Finance.html" height="500" width="400"
+					title="Finance"></iframe>
+			</div>
+			<script>
+							document.getElementById('vignette').addEventListener('click', function () {
+								this.classList.add('opacity-1');
+							});
+			</script>
+		</div>
+		<div id="asterisk">
+			<div class="window" style="margin: 60px; width: 552px">
+				<div class="title-bar">
+					<div class="title-bar-text">
+						Åsterisk
+					</div>
+					<div class="title-bar-controls">
+						<button aria-label="Close" onclick="asterisk()"></button>
+					</div>
+				</div>
+				<div class="window-body">
+					<iframe src="https://asterisk.jsjs8.repl.co/" width="900" height="500"
+						frameborder="0" marginheight="0" loading="lazy"
+						marginwidth="0">読み込んでいます…</iframe>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!--スペース確保のため-->
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!--スペース確保のため-->
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!--スペース確保のため-->
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!--スペース確保のため-->
+		<br>
+		<br>
+	</div>
+	<div class="zoom-icon"></div>
+	<div id="space">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+	<div id="screensaver">
+		<p class="saver1" id="saver1">Deep-Fried 5</p>
+		<p class="saver1" id="saver2" style="color:lime;">Why are you staring at <br>Deep-Fried?</p>
+	</div>
+	<script class="Deep-Voice">
+							const voiceSelect = document.querySelector('#voice-select')
+							function appendVoices() {
+								console.log("Deep-Fried Voice Kit v2.0 by Carnation")
+								// ①　使える声の配列を取得
+								// 配列の中身は SpeechSynthesisVoice オブジェクト
+								const voices = speechSynthesis.getVoices()
+								voiceSelect.innerHTML = '';//→erorr:corde:off
+								voices.forEach(voice => { //　アロー関数 (ES6)アロー関数はこれだぞ。
+									// 日本語以外の声は選択肢に追加しない。
+									if (!voice.lang.match('ja')) return
+									const option = document.createElement('option')
+									option.value = voice.name
+									option.text = `${voice.name} (${voice.lang})` //　テンプレートリテラル (ES6)
+									option.setAttribute('selected', voice.default)
+									voiceSelect.appendChild(option)
+								});
+							}
+							speechSynthesis.onvoiceschanged = e => {
+								appendVoices()
+							}
+
+							$(document).ready(function () {
+								var rec = new webkitSpeechRecognition();
+								rec.continuous = true;
+								rec.interimResults = false;
+								rec.lang = 'ja-JP';
+
+								var userSaid = function (str, s) {
+									return str.indexOf(s) > -1;
+								}
+
+								rec.onresult = function (e) {
+
+									for (var i = e.resultIndex; i < e.results.length; ++i) {
+										if (e.results[i].isFinal) {
+											var str = e.results[i][0].transcript;
+											console.info('反応した言葉:' + str);
+											if (userSaid(str, 'SCR')) {
+												scr_open()
+											}
+											if (userSaid(str, 'SCR')) {
+												scr_open()
+											}
+											if (userSaid(str, 'マニュアル')) {
+												M_open()
+											}
+											if (userSaid(str, 'テスト')) {
+												alert("あなたのDeep-Friedとマイクは正常に動作しています😀\n何ができるかは、Helpを見てください(^^)😀")
+											}
+											if (userSaid(str, '勉強相談室')) {
+												scr_open()
+											}
+											if (userSaid(str, 'SCRを開く')) {
+												scr_open()
+											}
+											if (userSaid(str, '勉強相談室を開く')) {
+												scr_open()
+											}
+											if (userSaid(str, '教相談室を開く')) {
+												scr_open()
+											}
+											if (userSaid(str, '質問')) {
+												situmon()
+											}
+											if (userSaid(str, '質問をする')) {
+												situmon()
+											}
+											if (userSaid(str, '質問する')) {
+												situmon()
+											}
+											if (userSaid(str, 'ヘルプ')) {
+												help()
+											}
+											if (userSaid(str, 'ヘルプ')) {
+												help()
+											}
+											if (userSaid(str, 'すべて閉じる')) {
+												document.getElementById("situmon").style.display = "none";
+												document.getElementById("SCR").style.display = "none";
+												document.getElementById("Erorr").style.display = "none";
+												document.getElementById("test").style.display = "none";
+												document.getElementById("DeepPad").style.display = "none";
+												document.getElementById("M").style.display = "none";
+												document.getElementById("help").style.display = "none";
+												document.getElementById("feedback").style.display = "none";
+												document.getElementById("aboutt").style.display = "none";
+												document.getElementById("voice").style.display = "none";
+												document.getElementById("newfunction").style.display = "none";
+												document.getElementById("situmon_kotaeru").style.display = "none";
+											}
+											if (userSaid(str, '全て閉じる')) {
+												document.getElementById("situmon").style.display = "none";
+												document.getElementById("SCR").style.display = "none";
+												document.getElementById("Erorr").style.display = "none";
+												document.getElementById("test").style.display = "none";
+												document.getElementById("DeepPad").style.display = "none";
+												document.getElementById("M").style.display = "none";
+												document.getElementById("help").style.display = "none";
+												document.getElementById("feedback").style.display = "none";
+												document.getElementById("aboutt").style.display = "none";
+												document.getElementById("voice").style.display = "none";
+												document.getElementById("newfunction").style.display = "none";
+												document.getElementById("situmon_kotaeru").style.display = "none";
+											}
+											if (userSaid(str, 'トーク')) {
+												const uttr = new SpeechSynthesisUtterance()
+												// 文章 (コンストラクタの引数以外に、この方法でも指定できます)
+												uttr.text = "こんにちは。私はtalkです。なにかお手伝いできることはありますか?"
+
+												uttr.voice = speechSynthesis
+													.getVoices()
+													.filter(voice => voice.name === voiceSelect.value)[0]
+												// 再生 (発言キュー発言に追加)
+												speechSynthesis.speak(uttr)
+											}
+											/*	構文	
+									  else if (userSaid(str, '対応ワード')) {
+														処理
+													}
+													
+													}*/
+
+										}
+									}
+								}
+								$("#startRecBtn").click(function () {
+									alert("Deep-Voiceを開始します。")
+									rec.start();
+								});
+								$("#stopRecBtn").click(function () {
+									alert("Deep-Voiceを終了します。")
+									rec.stop();
+								});
+								console.time("Deep-Fried Voice Kit 起動時間")
+								console.timeEnd("Deep-Fried Voice Kit 起動時間")
+								//	rec.start();
+							});
+
+	</script>
+	<script id="openclosejs">
+							let als = 0;
+							document.getElementById("select").style.display = "none";
+							document.getElementById("cal").style.display = "none";
+							document.getElementById("asterisk").style.display = "none";
+							document.getElementById("shutdown").style.display = "none";
+							document.getElementById("search_result").style.display = "none";
+							document.getElementById("notice").style.display = "none";
+							document.getElementById("kabe").style.display = "none";
+							document.getElementById("ajaxreload").style.display = "none";
+							document.getElementById("situmon").style.display = "none";
+							document.getElementById("AI").style.display = "none";
+							document.getElementById("SCR").style.display = "none";
+							document.getElementById("Erorr").style.display = "none";
+							document.getElementById("test").style.display = "none";
+							document.getElementById("DeepPad").style.display = "none";
+							document.getElementById("M").style.display = "none";
+							document.getElementById("help").style.display = "none";
+							document.getElementById("feedback").style.display = "none";
+							document.getElementById("aboutt").style.display = "none";
+							document.getElementById("voice").style.display = "none";
+							document.getElementById("newfunction").style.display = "none";
+							document.getElementById("situmon_kotaeru").style.display = "none";
+							document.getElementById("estore").style.display = "none";
+							document.getElementById("restore").style.display = "none";
+							document.getElementById("kanji").style.display = "none";
+							document.getElementById("spotlight").style.display = "none";
+							document.getElementById("saver1").style.display = "none";
+							document.getElementById("saver2").style.display = "none";
+							document.getElementById("upgrade").style.display = "none";
+							document.getElementById("vignette_menu").style.display = "none";
+		
+
+		document.getElementById("setting").style.display = "none";
+
+							//新しい壁紙どう?5Kだけど、
+							function voice() {
+								var change = document.getElementById("voice")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function asterisk() {
+								var change = document.getElementById("asterisk")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function cal() {
+								var change = document.getElementById("cal")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function s_open() {
+								var change = document.getElementById("shutdown")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function V_OPEN() {
+								var change = document.getElementById("vignette_menu")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function opensv() {
+								var change = document.getElementById("saver1")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function search_open() {
+								var change = document.getElementById("spotlight")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function opennotice() {
+								var change = document.getElementById("notice")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function openstore() {
+								var change = document.getElementById("estore")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function tuchi() {
+								var change = document.getElementById("ajaxreload")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function situmon() {
+								var change = document.getElementById("situmon");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function aiopen() {
+								var change = document.getElementById("AI");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function scr_open() {
+								var change = document.getElementById("SCR");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function Erorr() {
+								var change = document.getElementById("Erorr");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function pad_open() {
+								als += 1;
+								var change = document.getElementById("DeepPad");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+								if (als === 10) {
+									snow();
+								}
+							}
+							function kotaeru_open() {
+								var change = document.getElementById("situmon_kotaeru");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function new_open() {
+								var change = document.getElementById("newfunction");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function welcome() {
+								var change = document.getElementById("welcome");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function feedback() {
+								var change = document.getElementById("feedback");
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function help() {
+								var change = document.getElementById("help")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function M_open() {
+								var change = document.getElementById("M")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function about() {
+								var change = document.getElementById("aboutt")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+							function kanji() {
+								var change = document.getElementById("kanji")
+
+								if (change.style.display == "block") {
+									change.style.display = "none";
+								} else {
+									change.style.display = "block";
+								}
+							}
+
+							shortcut.add("Ctrl+Q", function () {
+								situmon();
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+							shortcut.add("Ctrl+Z", function () {
+								feedback();
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+							shortcut.add("Ctrl+Y", function () {
+								help();
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+							shortcut.add("Ctrl+X", function () {
+								window.close();
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+							shortcut.add("Ctrl+1", function () {
+								M_open();
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+							shortcut.add("Ctrl+B", function () {
+								about();
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+							shortcut.add("Ctrl+T", function () {
+								new_open();
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+							shortcut.add("Ctrl+O", function () {
+								scr_open();
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+							shortcut.add("Ctrl+shift+Alt+R", function () {
+								document.getElementById("restore").style.display = "block";
+							},
+								{
+									'type': 'keydown',
+									'propagate': false,
+									'target': document
+								});
+	</script>
+	<script id="restoreAPI">
+							function initialisation() {
+								Cookies.remove();
+								console.log("Cookies Cleared");
+								Cookies.set("init", true)
+								console.log("Init Cookies Set");
+								console.log("Rebooting...")
+								location.reload()
+							}
+							function Freboot() {
+								var allCookies = Cookies.get();
+								for (var key in allCookies) {
+									localStorage.setItem(key, allCookies[key]);
+								}
+								console.log("All data BackUp done.")
+								location.reload()
+							}
+							function restore() {
+								var allCookies = Cookies.get();
+								for (var key in allCookies) {
+									localStorage.setItem(key, allCookies[key]);
+								}
+								console.log("All data BackUp done.")
+								console.error("エラーが発生しました。\n再起不可能なエラー");
+								Erorr();
+								const styles = `color:red; font-size: 20px;　font-family:'thin';`;
+								console.log('%cエラーが発生しました。\nErorr53\n再起不可能なエラー', styles);
+								let element = document.getElementById('box');
+								element.insertAdjacentHTML('beforebegin', '<img src="data/image/Erorr/53.webp" alt="hello"class="erorr_img">');
+							}
+	</script>
+	<style id="dockstyle">
+		@keyframes bounce {
+
+			0%,
+			100% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(-20px);
+			}
+		}
+
+
+		img {
+			border: none;
+		}
+
+		/* dock - top */
+		.dock {
+			position: relative;
+			height: 60px;
+			text-align: center;
+			opacity: 0;
+		}
+
+		.dock:hover {
+			opacity: 1;
+		}
+
+		.dock-container {
+			position: absolute;
+			height: 60px;
+			background: url(images/dock-bg2.gif);
+			padding-left: 20px;
+		}
+
+		a.dock-item {
+			display: block;
+			width: 40px;
+			color: #000;
+			position: absolute;
+			top: 0px;
+			text-align: center;
+			text-decoration: none;
+			font: bold 12px Arial, Helvetica, sans-serif;
+		}
+
+		.dock-item img {
+			border: none;
+			margin: 5px 10px 0px;
+			width: 100%;
+		}
+
+		.dock-item span {
+			display: none;
+			padding-left: 20px;
+		}
+
+		/* dock2 - bottom */
+		#dock2 {
+			width: 100%;
+			bottom: 0px;
+			position: absolute;
+			left: 0px;
+		}
+
+		.dock-container2 {
+			position: absolute;
+			height: 50px;
+			background: url(images/dock-bg.gif);
+			padding-left: 20px;
+		}
+
+		a.dock-item2 {
+			display: block;
+			font: bold 12px Arial, Helvetica, sans-serif;
+			width: 40px;
+			color: #000;
+			bottom: 0px;
+			position: absolute;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		.dock-item2 span {
+			display: none;
+			padding-left: 20px;
+		}
+
+		.dock-item2 img {
+			border: none;
+			margin: 5px 10px 0px;
+			width: 100%;
+		}
+
+		#dock-container {
+			position: fixed;
+			bottom: 0;
+			text-align: center;
+			right: 20%;
+			left: 20%;
+			width: 60%;
+			background: rgba(255, 255, 255, 0.2);
+			border-radius: 10px 10px 0 0;
+		}
+
+		#dock-container li {
+			list-style-type: none;
+			display: inline-block;
+			position: relative;
+		}
+
+		#dock-container li img {
+			width: 64px;
+			/*64*/
+			height: 64px;
+			-webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent),
+					color-stop(0.7, transparent), to(rgba(255, 255, 255, .5)));
+			-webkit-transition: all 0.3s;
+			-webkit-transform-origin: 50% 100%;
+		}
+
+		#dock-container li:hover img {
+			-webkit-transform: scale(2.5);
+			margin: 0 2em;
+		}
+
+		#dock-container li:hover+li img,
+		#dock-container li.prev img {
+			-webkit-transform: scale(1.5);
+			margin: 0 1.5em;
+		}
+
+		#dock-container li span {
+			display: none;
+			position: absolute;
+			bottom: 170px;
+			left: 0;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0.75);
+			padding: 16px 0;
+			border-radius: 24px;
+		}
+
+		#dock-container li:hover span {
+			display: block;
+			color: #fff;
+		}
+
+		.dock li:active {
+			animation: bounce 2.5s;
+		}
+	</style>
+	<script id="dockscript">
+							function ani(id) {
+								console.log("Duck tap.")
+							}
+
+	</script>
+	<div id="dock-container">
+		<div id="dock" class="dock">
+			<ul>
+				<li id="1">
+					<span style="font-size:15px">勉強相談室</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/勉強相談室のロゴ.webp"
+							alt="勉強相談室を開く" style="height:64px;width:64px;"
+							onclick="ani(1);scr_open()" /></a>
+				</li>
+				<li id="2">
+					<span style="font-size:15px">ToasterAI</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/ToasterAI.webp"
+							alt="ToasterAI" style="height:64px;width:64px;"
+							onclick="ani(2);aiopen();" /></a>
+				</li>
+				<li id="3">
+					<span style="font-size:15px">DeepPad</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/DeepPad.webp" alt="DeepPad"
+							style="height:64px;width:64px;"
+							onclick="ani(2);pad_open()" /></a>
+				</li>
+				<li id="4">
+					<span style="font-size:15px">質問をする</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/%E8%B3%AA%E5%95%8F.webp"
+							alt="質問をする" style="height:64px;width:64px;"
+							onclick="ani(3);situmon()" /></a>
+				</li>
+				<li id="5">
+					<span style="font-size:15px">質問に答える</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/みんなの質問に答える.webp"
+							alt="みんなの質問に答える" style="height:64px;width:64px;"
+							onclick="ani(4);kotaeru_open()" /></a>
+				</li>
+				<li id="6">
+					<span style="font-size:15px">フィードバック</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/フィードバック.webp" alt="フィードバック"
+							style="height:64px;width:64px;"
+							onclick="ani(5);feedback()" /></a>
+				</li>
+				<li id="7">
+					<span style="font-size:15px">ヘルプ</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/ヘルプ.webp" alt="ヘルプ"
+							style="height:64px;width:64px;" onclick="ani(6);help()" /></a>
+				</li>
+				<li id="8">
+					<span style="font-size:15px">マニュアル</span>
+					<a href="#" aria-label=""><img alt="マニュアル" src="data/Dock/image/マニュアル.webp"
+							style="height:64px;width:64px;" onclick="ani(7);M_open()" /></a>
+				</li>
+				<li id="9">
+					<span style="font-size:15px">Cstore</span>
+					<a href="#" aria-label=""><img alt="Store" src="data/Dock/image/eStore.webp"
+							style="height:64px;width:64px;"
+							onclick="ani(8);openstore()" /></a>
+				</li>
+				<li id="10">
+					<span style="font-size:15px">Cal</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/Cal.webp" alt="Cal"
+							style="height:64px;width:64px;" onclick="ani(9);cal()" /></a>
+				</li>
+				<li id="10">
+					<span style="font-size:15px">Deep-Friedについて</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/Deep-Friedについて.webp"
+							alt="Deep-Friedについて" style="height:64px;width:64px;"
+							onclick="ani(9);about()" /></a>
+				</li>
+				<li id="10">
+					<span style="font-size:15px">Deep-Voiceの設定</span>
+					<a href="#" aria-label=""><img src="data/Dock/image/Deep-Voice.webp"
+							alt="Deep-VoiceKitの設定" style="height:64px;width:64px;"
+							onclick="ani(10);voice()" /></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script id="erorrjs">
+							/*
+								eeeeee     r  rrrrr     r  rrrrr       ooooooo      r  rrrrr
+							   ee    ee    rrr     r    rrr     r     oo     oo     rrr     r
+							   eeeeeeee    r            r             oo     oo     r
+							   e           r            r             oo     oo     r
+								eeeeee     r            r              ooooooo      r
+							*/
+
+							function status() {
+								if (開発中 === true) {
+									Erorr();//ここミスってた
+									alert("開発中なので一部の機能が使えなくなっているかもしれません。")
+									const styles = `color:red; font-size: 20px;　font-family:'thin';`;
+									console.log('%cエラーが発生しました。\nErorrID:x00025\n開発中です。', styles);
+									let element = document.getElementById('box');
+									element.insertAdjacentHTML('beforebegin', '<img src="data/image/Erorr/x00025.gif" class="erorr_img">');
+									let elements = document.getElementById('box');
+									elements.insertAdjacentHTML('beforebegin', '<button onclick="Erorr();">承知で使用する</button>');
+									document.getElementById('box').insertAdjacentHTML('beforebegin', '<audio src="data/Beep/data/Beep/short-01.mp3" autoplay>');
+								}
+
+							}
+							window.addEventListener('DOMContentLoaded', function () {
+								console.log("DOMContentLoaded：HTMLを読み込みました。");
+								console.timeEnd("Deep-Fried起動時間")
+								status();
+							});
+							/*
+								eeeeee     r  rrrrr     r  rrrrr       ooooooo      r  rrrrr      
+							   ee    ee    rrr     r    rrr     r     oo     oo     rrr     r
+							   eeeeeeee    r            r             oo     oo     r
+							   e           r            r             oo     oo     r
+								eeeeee     r            r              ooooooo      r             
+						
+						
+							*/
+
+							function err_404() {
+
+								Erorr();//ここミスってた
+
+								const styles = `color:red; font-size: 20px;　font-family:'thin';`;
+								console.log('%cエラーが発生しました。\nErorrID:network.404\nPage  Not Found', styles);
+								let element = document.getElementById('box');
+								element.insertAdjacentHTML('beforebegin', '<img src="data/image/Erorr/404.png" alt=""class="erorr_img">');
+								document.getElementById('box').insertAdjacentHTML('beforebegin', '<audio src="data/Beep/long-01short-01.mp3" autoplay>');
+							}
+	</script>
+	<script id="kittylxsettingjs">
+							function kittylx() {
+								document.getElementById('box').insertAdjacentHTML('beforebegin', '<audio src="data/Beep/起動音.mp3" autoplay>');
+							}
+	</script>
+	<script id="Flag://DeepFried/Push.js/SCR">
+							function push() {
+								Push.create("Deep-Friedの更新情報", {　//タイトル
+									body: "Deep-Friedは更新されました。",　//内容
+									icon: "data/image/logo.svg",　//ロゴ等の画像
+									timeout: 6000, // 通知が消えるタイミング
+									vibrate: [100, 100, 100], // モバイル端末でのバイブレーション秒数
+									onClick: function () {
+										//なんか書いて!
+									}
+								})
+							}
+	</script>
+	<script id="EasterEggAPI">
+							function snow() {
+								particlesJS("particles-js", {"particles": {"number": {"value": 600, "density": {"enable": true, "value_area": 1362.9002517356944}}, "color": {"value": "#fff"}, "shape": {"type": "circle", "stroke": {"width": 0, "color": "#000000"}, "polygon": {"nb_sides": 12}, "image": {"src": "img/github.svg", "width": 100, "height": 100}}, "opacity": {"value": 0.5, "random": true, "anim": {"enable": false, "speed": 1, "opacity_min": 0.1, "sync": false}}, "size": {"value": 10, "random": true, "anim": {"enable": false, "speed": 114.50288693448967, "size_min": 0.1, "sync": false}}, "line_linked": {"enable": false, "distance": 500, "color": "#ffffff", "opacity": 0.4, "width": 2}, "move": {"enable": true, "speed": 11.22388442605866, "direction": "bottom", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}}}, "interactivity": {"detect_on": "window", "events": {"onhover": {"enable": true, "mode": "bubble"}, "onclick": {"enable": true, "mode": "repulse"}, "resize": true}, "modes": {"grab": {"distance": 1500, "line_linked": {"opacity": 0.5}}, "bubble": {"distance": 1500, "size": 0, "duration": 0, "opacity": 1, "speed": 3}, "repulse": {"distance": 200, "duration": 0.4}, "push": {"particles_nb": 4}, "remove": {"particles_nb": 2}}}, "retina_detect": true}); var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function () {stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;} requestAnimationFrame(update);}; requestAnimationFrame(update);;
+							}
+	</script>
+	<script id="wallpaperAPI">
+							let e53 = false;
+							let at = false;
+							function err_53() {
+								const styles = `color:red; font-size: 20px;　font-family:'thin';`;
+								console.log('%cエラーが発生しました。\nErorr53\nアクティブソフトウェアサーバーキーのセグメンテーションが一致しません', styles);
+								document.getElementById("particles-js").style.display = "none";
+								shortcut.remove("Ctrl+Q");
+								shortcut.remove("Ctrl+Z");
+								shortcut.remove("Ctrl+Y");
+								shortcut.remove("Ctrl+X");
+								shortcut.remove("Ctrl+1");
+								shortcut.remove("Ctrl+B");
+								shortcut.remove("Ctrl+T");
+								shortcut.remove("Ctrl+O");
+								e53 = true;
+							}
+							function err_act() {
+								const styles = `color:red; font-size: 20px;　font-family:'thin';`;
+								console.log('%cエラーが発生しました。\nアクティベーションエラー\n不審な挙動が発見されたため、Deep-Friedはロックされています', styles);
+								document.getElementById("particles-js").style.display = "none";
+								shortcut.remove("Ctrl+Q");
+								shortcut.remove("Ctrl+Z");
+								shortcut.remove("Ctrl+Y");
+								shortcut.remove("Ctrl+X");
+								shortcut.remove("Ctrl+1");
+								shortcut.remove("Ctrl+B");
+								shortcut.remove("Ctrl+T");
+								shortcut.remove("Ctrl+O");
+								at = true;
+							}
+							function wall_smaho() {
+								document.body.style.backgroundImage = 'url(data/DynamicWall/wallpaper_custom/9090.webp)';
+							}
+							function wall() {
+								//時間取得
+								var now = new Date();
+								var hour = now.getHours();
+								let mimei = ((hour > 0) && (hour < 3))
+								let akegata = ((hour > 3) && (hour < 5))
+								let asa = ((hour > 5) && (hour < 9))
+								let hirumae = ((hour > 9) && (hour < 12))
+								let hirusugi = ((hour > 12) && (hour < 15))
+								let yuugata = ((hour > 15) && (hour < 18))
+								let yorunohazime = ((hour > 18) && (hour < 21))
+								let yoruosoku = ((hour > 21) && (hour < 24))
+								if (mimei === true) {
+									document.body.style.backgroundImage = 'url(data/DynamicWall/未明.webp)';
+								}
+								if (akegata === true) {
+									document.body.style.backgroundImage = 'url(data/DynamicWall/明け方.webp)';
+								}
+								if (asa === true) {
+									document.body.style.backgroundImage = 'url(data/DynamicWall/朝.webp)';
+								}
+								if (hirumae === true) {
+									document.body.style.backgroundImage = 'url(data/DynamicWall/昼前.webp)';
+								}
+								if (hirusugi === true) {
+									document.body.style.backgroundImage = 'url(data/DynamicWall/昼過ぎ.webp)';
+								}
+								if (yuugata === true) {
+									document.body.style.backgroundImage = 'url(data/DynamicWall/夕方.webp)';
+								}
+								if (yorunohazime === true) {
+									document.body.style.backgroundImage = 'url(data/DynamicWall/夜のはじめ.webp)';
+								}
+								if (yoruosoku === true) {
+									document.body.style.backgroundImage = 'url(data/DynamicWall/夜遅く.webp)';
+								}
+								if (e53 === true) {
+									document.body.style.backgroundImage = 'url(data/image/Erorr/53.webp)';
+								}
+								if (at === true) {
+									document.body.style.backgroundImage = 'url(data/image/Erorr/Activation.webp)';
+								}
+							}
+							function setwall() {
+								let swi = (screen.width)
+								let who = (screen.height)
+								let smaho = ((swi > 390) && (who > 844) || (swi > 844) && (who > 390))
+								let pc = ((swi < 390) && (who < 844) || (swi < 844) && (who < 390))
+								if (pc === true) {
+									wall_smaho();
+								}
+								if (smaho === true) {
+									wall();
+								}
+							}
+							function update_api() {
+								let xks = Cookies.get("login")
+								let tbg = Cookies.get("update")
+								let status = (xks && tbg)
+								if (status === true) {
+									err_53()
+								}
+							}
+							setInterval(setwall, 500);
+							setInterval(update_api, 500)
+	</script>
+	<script id="ZoooomAPI">
+			// 拡大鏡の機能を有効にする
+			function enableZoom() {
+				document.querySelector('.zoom-icon').addEventListener('mouseover', function () {
+					// マウスの位置に基づいて要素を拡大する
+					document.querySelectorAll('*').forEach(function (element) {
+						element.addEventListener('mousemove', function (event) {
+							const scale = 2; // 拡大率
+							const rect = element.getBoundingClientRect();
+							const x = event.clientX - rect.left;
+							const y = event.clientY - rect.top;
+							element.style.transformOrigin = `${x}px ${y}px`;
+							element.style.transform = `scale(${scale})`;
+						});
+					});
+				});
+			}
+
+			// 拡大鏡の機能を無効にする
+			function disableZoom() {
+				document.querySelector('.zoom-icon').addEventListener('mouseout', function () {
+					// マウスの位置に基づいて要素を拡大する
+					document.querySelectorAll('*').forEach(function (element) {
+						element.style.transform = '';
+					});
+				});
+			}
+
+			// 拡大鏡の機能を有効にする
+			enableZoom();
+
+		// 拡大鏡の機能を無効にする
+		//disableZoom();
+
+	</script>
+	</div>
+	</div>
+</body>
+
+</html>
