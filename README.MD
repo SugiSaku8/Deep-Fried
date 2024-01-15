@@ -1,62 +1,62 @@
 # Deep-Fried v120 INDEX
-````
+```
 <readme id="index" onclick="rui()">
 Welcome to the Deep-Fried!
-</readme>.
+</readme>
 <script>
 function rui(){
-let msg1 = "Welcome to the Deep-Fried!
-let msg2 = "New to the Deep-Fried!
-let msg3 = "Faster, easier to use, smarter"
-let msg4 = "\nMassive evolution!"
-let msg5 = "\nAlso, we've updated Deep-UX!"
+let msg1 = "ようこそDeep-Friedへ\n"
+let msg2 = "新しくなったDeep-Friedでは、\n"
+let msg3 = "さらに速く、\nさらに使いやすく、\nさらに賢く"
+let msg4 = "\n大進化しました!"
+let msg5 = "\nまた、Deep-UXの更新もしました!"
 console.log(msg1+msg2+msg3+msg4+msg5)
 }
 </script>
 ```
-! [logo](data/image/logo.svg)  
-This is our new study tool, Deep-Fried.  
-With v120update, it is even faster, even easier to use, and even smarter. 
+![ロゴ](data/image/logo.svg)  
+これは、新しい勉強のツール、Deep-Friedです。  
+v120updateで、更に速く、更に使いやすく、更に賢くなりました。 
 ______
-Info.
-````
+情報
+```
 Deep-Fried
 v120
 HTML5,CSS3,Javascript5
 jQuery,JS-Cookie
 ©Carnation 2023
 ©Deep-Fried 2023,11,29
-````
+```
 ______
-Newly added.
+新しく追加されたこと。
 ### Welcome to the Deep-Fried 5
-The power of ``5`` for you.  
-More efficiency. `  
-A `Right-Click Menu` has been added to allow you to work even more efficiently.  
-Upgraded `SpaceUI`.  
-It became more beautiful.　    
-Vidget` is added.    
-It takes your work to a new dimension.  
-Notification center is added.  
-You can receive the latest information without restarting.  
-ToasterAI beta is now available.  
-Convenience is near at hand.
+`5`のパワーを、あなたに。  
+・`さらなる効率を。`  
+`右クリックメニュー`が追加され、更に効率的に作業ができるようになりました。  
+・`SpaceUI`をグレードアップ。  
+さらに美しくなりました。　    
+・`ヴィジェット`が追加。    
+作業を新しい次元へ。  
+・`通知センター`を追加。  
+再起動不要で、最新情報をお届けします。  
+・`ToasterAI β`が使用可能に。  
+便利はもうすぐ近くに。
 ______
-The main component files are `index.html`, `SPACEUI.CSS`, and `ajax.html`.  
-The `data` folder also contains a large amount of data such as images.
+主な構成ファイルは、`index.html`、`SPACEUI.CSS`、そして`ajax.html`です。  
+また、dataフォルダーは、画像などのデータが大量に収納されています。
 ______
-Deep-Fried for `MicrosoftWindows` will also be announced, using `C++ && .Net`.
-- [x] Deep-Fried WebEdition stabilized.
-- [x] Deep-Fried WebEditon to be installable
-- [x] Stabilization of Deep-Fried English_WebEdition
- - [ ] Analysis of Deep-Fried
- - [ ] Study of C#
- - [ ] Porting from html,js,css to C#.Net
- - [ ] Testing
- - [ ] Presentation of Deep-Fried WindowsEdition(C# Edition)
- - [ ] Stabilization of Deep-Fried WindowsEdition
+また、`C++ && .Net`を使って、`MicrosoftWindows`専用のDeep-Friedも発表される予定です。
+- [x] Deep-Fried WebEditionの安定化
+- [x] Deep-Fried　WebEditonのインストール可能化
+- [x] Deep-Fried English_WebEditionの安定化
+ - [ ] Deep-Friedの分析
+ - [ ] C#の勉強
+ - [ ] html,js,cssから、C#.Netへの移植
+ - [ ] テスト
+ - [ ] Deep-Fried WindowsEdition(C# Edition)の発表
+ - [ ] Deep-Fried WindowsEditionの安定化
 _______
-````
+```
 ©Carnation 2022-24
 think defferent.
 ```
