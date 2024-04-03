@@ -643,7 +643,7 @@ pre {
 
 pre,
 pre * {
-	font-family: 'SFPro';
+	font-family: 'SFPros';
 }
 
 summary:focus {
@@ -724,7 +724,7 @@ label {
 input,
 label,
 textarea {
-	font-family: "SFPro", Arial;
+	font-family: "SFPros", Arial;
 	font-size: 11px;
 }
 
@@ -745,7 +745,7 @@ textarea:focus {
 
 
 option {
-	font-family: "SFPro", Arial;
+	font-family: "SFPros", Arial;
 	font-size: 11px;
 }
 
@@ -1037,7 +1037,7 @@ input[type="range"].has-box-indicator::-moz-range-thumb {
 }
 
 ul.tree-view {
-	font-family: "SFPro", Arial;
+	font-family: "SFPros", Arial;
 	font-size: 11px;
 	display: block;
 	background: #fff;
@@ -1261,14 +1261,14 @@ menu[role="tablist"].justified button {
 }
 
 @font-face {
-	font-family: 'SFPro';
+	font-family: 'SFPros';
 	src: url('SFProJP.woff')format('woff');
 	font-display="swap"
 }
 
 .title-bar {
 	opacity: 1.0;
-	font-family: SFPro;
+	font-family: SFPros;
 	background: linear-gradient(180deg,
 			#514f52 20%,
 			#4b494c 38%,
@@ -1386,7 +1386,7 @@ menu[role="tablist"].justified button {
 }
 
 .status-bar-field {
-	font-family: "SFPro", Arial;
+	font-family: "SFPros", Arial;
 	-webkit-font-smoothing: antialiased;
 	box-shadow: none;
 	padding: 1px 2px;
@@ -1403,7 +1403,7 @@ menu[role="tablist"].justified button {
 }
 
 button {
-	font-family: "SFPro", Arial;
+	font-family: "SFPros", Arial;
 	-webkit-font-smoothing: antialiased;
 	font-size: 11px;
 	box-sizing: border-box;
