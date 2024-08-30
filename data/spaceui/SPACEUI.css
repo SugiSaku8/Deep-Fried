@@ -970,58 +970,6 @@ input[type="range"].has-box-indicator::-moz-range-thumb {
 	transform: translateY(0) scaleX(-1);
 }
 
-.window {
-	font-size: 11px;
-	box-shadow: inset -1px -1px #2c2c2d, inset 1px 1px #dfdfdf,
-		inset -2px -2px #444444, inset 2px 2px #fff;
-	background: #4e4c4f;
-	padding: 3px;
-
-}
-
-.window:hover {
-	opacity: 1;
-	z-index: 10000;
-}
-
-.window fieldset {
-	margin-bottom: 9px;
-}
-
-.title-bar {
-	font-size: 8px;
-	background: #3e3c3f;
-	padding: 3px 2px 3px 3px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-
-.title-bar-text {
-	color: #fff;
-	letter-spacing: 0;
-	margin-right: 20px;
-}
-
-.title-bar-controls button {
-	padding: 0;
-	display: block;
-	min-width: 16px;
-	min-height: 14px;
-}
-
-.title-bar-controls button:focus {
-	outline: none;
-}
-
-.window-body {
-	margin: 8px;
-}
-
-.window-body pre {
-	margin: -8px;
-}
 
 .status-bar {
 	margin: 0 1px;
