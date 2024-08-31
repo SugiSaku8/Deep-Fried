@@ -398,3 +398,107 @@ body {
 
 	}
 }
+
+/*ウィンドウcss*/
+
+@keyframes movingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.window {
+    width: 600px;
+    height: 400px;
+    background: linear-gradient(270deg, rgba(135, 206, 235, 0.1), rgba(100, 149, 237, 0.1), rgba(46, 134, 218, 0.1));
+    background-size: 400% 400%;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    position: relative;
+    transition: opacity 0.5s ease;
+    animation: movingGradient 30s ease infinite; /* ウィンドウ本体のアニメーション */
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(270deg, rgba(135, 206, 235, 0.1), rgba(100, 149, 237, 0.1), rgba(46, 134, 218, 0.1));
+    background-size: 400% 400%;
+    padding: 8px 12px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.5);
+    animation: movingGradient 45s ease infinite; /* タイトルバーのアニメーションを別の速度で設定 */
+}
+
+.title-bar-text {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.title-bar-controls {
+    display: flex;
+    gap: 8px;
+    margin-right: auto; /* ボタンを左に配置 */
+}
+
+.title-bar-controls button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* ボタンの拡大効果 */
+@keyframes expandEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.title-bar-controls button:nth-child(1) {
+    background: linear-gradient(to bottom, rgba(255, 94, 87, 0.5), rgba(226, 38, 65, 0.5));
+}
+
+.title-bar-controls button:nth-child(2) {
+    background: linear-gradient(to bottom, rgba(255, 189, 46, 0.5), rgba(223, 162, 35, 0.5));
+}
+
+.title-bar-controls button:nth-child(3) {
+    background: linear-gradient(to bottom, rgba(40, 202, 66, 0.5), rgba(31, 154, 33, 0.5));
+}
+
+.title-bar-controls button:hover {
+    animation: expandEffect 300ms ease-out forwards;
+}
+
+.window-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 50px);
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #000000;
+    margin: 0;
+}
