@@ -3,26 +3,7 @@
 <!--- Deep-Fried on Web-->
 <!--Deep-Fried 5 (ver.130)--->
 <!----SYSTEM by DEEP - 5-->
-<!--ソースコードワールド5.0--->
-<!-----------
-会社について、色々書いてみて→
------------>
-<!--
-Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes.
 
-The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them.
-
-About the only thing you can’t do is ignore them. Because they change things. They invent. They imagine. They heal. They explore. They create. They inspire. They push the human race forward.
-
-Maybe they have to be crazy.
-
-How else can you stare at an empty canvas and see a work of art? Or sit in silence and hear a song that’s never been written? Or gaze at a red planet and see a laboratory on wheels?
-
-We make tools for these kinds of people.
-
-While some see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.
-Think Defferent.
---->
 <!-- 使っている技術一覧--->
 <!---
 1. XP.CSS by botoxparty
@@ -34,19 +15,6 @@ Think Defferent.
 7.Chicago by Apple
 8.SpaceUI by Carnation
 9.Deep-6 by Carnation
-__________________________
-Jquery sappoed list
-Current Active Support
-Desktop
-・Chrome: (Current - 1) and Current
-・Edge: (Current - 1) and Current
-・Firefox: (Current - 1) and Current, ESR
-・Internet Explorer: 9+
-・Safari: (Current - 1) and Current
-・Opera: Current
-Mobile
-・Stock browser on Android 4.0+[1]
-・Safari on iOS 7+[1]
 -->
 <script>
 	console.time("Deep-Fried起動時間")
@@ -1327,20 +1295,16 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				</div>
 			</div>
 		</div>
-		<div id="welcome">
-			<div class="window" style="margin: 32px; width: 500px">
-				<div class="title-bar">
-					<div class="title-bar-text">
-						<div class="title_welcome">ようこそ</div>
-
-					</div>
-					<div class="title-bar-controls">
-						<button aria-label="Close" onclick="welcome()"></button>
-
-					</div>
-				</div>
-				<div class="window-body">
-
+		<div class="window" id="welcome">
+    <div class="title-bar">
+        <div class="title-bar-controls">
+            <button aria-label="Close" onclick="closeWindow()"></button>
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+        </div>
+        <div class="title-bar-text">Deep-Fried</div>
+    </div>
+    <div class="window-body">
 					<video src="data/image/deep-friedオープニング特別編.webm" autoplay muted loop width="490"
 						height="250" alt="Deep-Friedのオープニング"></video>
 					<br>
@@ -1354,9 +1318,9 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 					<br>
 
 					<button onclick="welcome()">閉じる</button>
-				</div>
-			</div>
-		</div>
+    </div>
+</div>
+
 		<div id="Erorr">
 			<div class="window" style="margin: 32px; width: 510px">
 				<div class="title-bar">
