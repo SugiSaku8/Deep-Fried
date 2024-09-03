@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--Deep-Fried by Carnation>
 <!--- Deep-Fried on Web-->
-<!--Deep-Fried 7 (ver.140.2)--->
-<!----SYSTEM by DEEP - 7-->
+<!--Deep-Fried 5 (ver.130)--->
+<!----SYSTEM by DEEP - 5-->
 
 <!-- 使っている技術一覧--->
 <!---
@@ -676,15 +676,11 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				}
 				//Evalの代わりを定義
 				function cgapi() {
-					let extra = Cookie.get('appdata')
+					let extra = "a"
 					Eval(extra);
 				}
 				function cgClaer() {
 					let clearsakusakusaku = comfirm("本当にアプリデータを削除しますか？")
-					if (clearsakusakusaku === true) {
-						Cookies.remove('appdata')
-						alert("正常に削除されました。")
-					}
 				}
 			</script>
 			<style id="menusettingstyle">
@@ -1438,7 +1434,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				
 				<div class="window-body">
 					<img src="data/image/Deep-fried5.png" style="width:100%" onclick="opensv();">
-					<p style="font-size:25px;font-family:'thin';">Build:140.2</p>
+					<p style="font-size:25px;font-family:'thin';">Build:140.1</p>
 					<button onclick="sheep()">Sheep.jsを起動する</button>
 				</div>
 			</div>
