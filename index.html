@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--Deep-Fried by Carnation>
 <!--- Deep-Fried on Web-->
-<!--Deep-Fried 5 (ver.130)--->
-<!----SYSTEM by DEEP - 5-->
+<!--Deep-Fried 7 (ver.140.2)--->
+<!----SYSTEM by DEEP - 7-->
 
 <!-- 使っている技術一覧--->
 <!---
@@ -1355,10 +1355,8 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				<div class="title-bar-controls">
 						<button aria-label="Close" onclick="feedback()"></button>
 					</div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						フィードバック
-					</div>
 				
 				</div>
 				<div class="window-body">
@@ -1396,10 +1394,8 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 
 <button aria-label="Close" onclick="kanji()"></button>
 </div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						*Easter Egg 漢字でgo*
-					</div>
 					
 				</div>
 				<div class="window-body">
@@ -1416,12 +1412,10 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 
 <button aria-label="Close" onclick="M_open()"></button>
 </div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						マニュアル
 					</div>
 					
-				</div>
 				<div class="window-body">
 					<iframe loading="lazy"
 						style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
@@ -1437,15 +1431,14 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 						<button aria-label="Close" onclick="about()"></button>
 
 					</div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						このDeep-Friedについて
 					</div>
 					
-				</div>
+				
 				<div class="window-body">
 					<img src="data/image/Deep-fried5.png" style="width:100%" onclick="opensv();">
-					<p style="font-size:25px;font-family:'thin';">Build:140.1</p>
+					<p style="font-size:25px;font-family:'thin';">Build:140.2</p>
 					<button onclick="sheep()">Sheep.jsを起動する</button>
 				</div>
 			</div>
@@ -1456,12 +1449,9 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 						<button aria-label="Close" onclick="new_open()"></button>
 
 					</div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						新機能
 					</div>
-				
-				</div>
 				<div class="window-body" style="background-color:#000000;">
 					<style>
 						.Deep-Friedの新機能 {
@@ -1506,12 +1496,9 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 						<button aria-label="Close" onclick="kotaeru_open()"></button>
 
 					</div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						質問に答える
 					</div>
-					
-				</div>
 				<div class="window-body">
 					<iframe class="inweb"
 						src="https://docs.google.com/forms/d/e/1FAIpQLSfdFDS6AplGFY91pbJ2yZZ1US8kGfWerDrlIh8aHSz60ygNCg/viewform?embedded=true"
@@ -1520,69 +1507,16 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				</div>
 			</div>
 		</div>
-		<div id="DeepPad">
-			<div class="window" style="margin: 32px; width: 900px">
-				<div class="title-bar-controls">
-						<button aria-label="Close" onclick="pad_open()"></button>
-
-					</div>
-				<div class="title-bar">
-					<div class="title-bar-text">
-						DeepPad
-					</div>
-				
-				</div>
-				<div class="window-body">
-					<ul class="window_date">
-						<li><img src="data/Dock/image/Deep-Friedについて.webp" alt="Deep-Friedについて"
-								width="200" height="200" alt="Deep-Friedについて。"
-								loading="lazy" onclick="about()">
-						</li>
-						<li><img src="data/Dock/image/質問.webp" alt="質問を開く" width="200"
-								height="200" alt="質問を開く" loading="lazy"
-								onclick="pad_open(),situmon()">
-						</li>
-						<li><img src="data/Dock/image/みんなの質問に答える.webp" alt="みんなの質問をする"
-								width="200" height="200" alt="みんなの質問をする" loading="lazy"
-								onclick="pad_open(),kotaeru_open()"></li>
-					</ul>
-					<ul class="window_date">
-						<img src="data/Dock/image/みんなの質問.webp" alt="勉強相談室" widht="200"
-							height="200" alt="みんなの質問" loading="lazy"
-							onclick="pad_open(),scr_open()">
-
-						<img src="data/Dock/image/ヘルプ.webp" widht="200" alt="ヘルプ" height="200"
-							loading="lazy" onclick="pad_open(),help()">
-						<img src="data/Dock/image/マニュアル.webp" widht="200" alt="マニュアル"
-							height="200" loading="lazy" onclick="pad_open(),M_open()">
-					</ul>
-
-					<style>
-						li {
-							list-style: none;
-						}
-
-						ul {
-							display: flex;
-
-						}
-					</style>
-
-				</div>
-			</div>
-		</div>
+	
 		<div id="SCR">
 			<div class="window" style="margin: 32px; width: 940px">
 				<div class="title-bar-controls">
 						<button aria-label="Close" onclick="scr_open()"></button>
 
 					</div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						勉強相談室
 					</div>
-					
-				</div>
 				<div class="window-body">
 					<iframe src="https://docs.google.com/document/d/1hahjAEoAs2rosicv667KHpuDHLL8yf4dnDNQAFcN35E/edit?usp=sharing"
 						width="900" height="500" frameborder="0" marginheight="0" loading="lazy"
@@ -1597,12 +1531,10 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 						<button aria-label="Close" onclick="voice()"></button>
 
 					</div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						Deep-Fried　Voice kit2の設定
 					</div>
-					
-				</div>
+			
 				<div class="window-body">
 					<style>
 						.btn {
@@ -1673,12 +1605,9 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 						<button aria-label="Close" onclick="aiopen()"></button>
 
 					</div>
-				<div class="title-bar">
 					<div class="title-bar-text">
 						ToasterAI
 					</div>
-					
-				</div>
 				<div class="window-body">
 					<br>
 					<iframe class="indeb" src="https://toasterai.jsjs8.repl.co" width="530"
@@ -1692,10 +1621,10 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				<div class="title-bar-controls">
 						<button aria-label="Close" onclick="openstore()"></button>
 					</div>
-				<div class="title-bar">
+			
 					<div class="title-bar-text">
 						Cstore
-					</div>
+				
 					
 				</div>
 				<div class="window-body" id="gstore">
@@ -1726,12 +1655,11 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				<div class="title-bar-controls">
 						<button aria-label="Close" onclick="upgrade_open()"></button>
 					</div>
-				<div class="title-bar">
+	
 					<div class="title-bar-text">
 						Deep-Friedのアップグレード
 					</div>
-				
-				</div>
+			
 				<div class="window-body">
 					<style>
 						.upgrade_title {
@@ -1800,12 +1728,11 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				<div class="title-bar-controls">
 						<button aria-label="Close" onclick="kabegami()"></button>
 					</div>
-				<div class="title-bar">
+	
 					<div class="title-bar-text">
 						壁紙の設定
 					</div>
-				
-				</div>
+			
 				<div class="window-body">
 					<br>
 					<style>
