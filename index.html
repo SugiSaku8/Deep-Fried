@@ -573,7 +573,6 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 					document.getElementById("SCR").style.display = "none";
 					document.getElementById("Erorr").style.display = "none";
 					document.getElementById("test").style.display = "none";
-					document.getElementById("DeepPad").style.display = "none";
 					document.getElementById("M").style.display = "none";
 					document.getElementById("help").style.display = "none";
 					document.getElementById("feedback").style.display = "none";
@@ -2007,7 +2006,6 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 												document.getElementById("SCR").style.display = "none";
 												document.getElementById("Erorr").style.display = "none";
 												document.getElementById("test").style.display = "none";
-												document.getElementById("DeepPad").style.display = "none";
 												document.getElementById("M").style.display = "none";
 												document.getElementById("help").style.display = "none";
 												document.getElementById("feedback").style.display = "none";
@@ -2021,7 +2019,6 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 												document.getElementById("SCR").style.display = "none";
 												document.getElementById("Erorr").style.display = "none";
 												document.getElementById("test").style.display = "none";
-												document.getElementById("DeepPad").style.display = "none";
 												document.getElementById("M").style.display = "none";
 												document.getElementById("help").style.display = "none";
 												document.getElementById("feedback").style.display = "none";
@@ -2080,7 +2077,6 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 							document.getElementById("SCR").style.display = "none";
 							document.getElementById("Erorr").style.display = "none";
 							document.getElementById("test").style.display = "none";
-							document.getElementById("DeepPad").style.display = "none";
 							document.getElementById("M").style.display = "none";
 							document.getElementById("help").style.display = "none";
 							document.getElementById("feedback").style.display = "none";
@@ -2229,13 +2225,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 							}
 							function pad_open() {
 								als += 1;
-								var change = document.getElementById("DeepPad");
-
-								if (change.style.display == "block") {
-									change.style.display = "none";
-								} else {
-									change.style.display = "block";
-								}
+								
 								if (als === 10) {
 									snow();
 								}
@@ -2587,7 +2577,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 					<span style="font-size:15px">DeepPad</span>
 					<a href="#" aria-label=""><img src="data/Dock/image/DeepPad.webp" alt="DeepPad"
 							style="height:64px;width:64px;"
-							onclick="ani(2);pad_open()" /></a>
+							onclick="ani(2);" /></a>
 				</li>
 				<li id="4">
 					<span style="font-size:15px">質問をする</span>
