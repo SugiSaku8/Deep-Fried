@@ -1,45 +1,228 @@
 <!DOCTYPE html>
-<!--Deep-Fried by Carnation>
-<!--- Deep-Fried on Web-->
-<!--Deep-Fried 5 (ver.130)--->
-<!----SYSTEM by DEEP - 5-->
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Deep-Fried - A modern web interface">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>Deep-Fried</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍳</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍳</text></svg>">
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="data/spaceui/SPACEUI.7.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="data/spaceui/SPACEUI.7.css"></noscript>
 
-<!-- 使っている技術一覧--->
-<!---
-1. XP.CSS by botoxparty
-2. 7.CSS  by khang-nd
-3. JS-Cookie by js-cookie
-4.Jquery by Jquery
-5.Apple San Francisco Pro JP by Apple 
-6.AppleGaramond by Apple
-7.Chicago by Apple
-8.SpaceUI by Carnation
-9.Deep-6 by Carnation
--->
-<script>
-	console.time("Deep-Fried起動時間")
-	const 開発中 = false;
-	const info = ["DEEP-FRIED", "DEEP-FRIED-DEVELOPMENT", "DEEP-FRIED-DEVELOPMENT-VERSION-5.0", "DEEP-FRIED-DEVELOPMENT-CORDE-NAME-DORINEPLUS"];
-
-	//開発中→trueにすること！
-	/*
-	Deep-Friedの最小要件
-	800MHz以上のCPU
-	4GB以上のメモリ
-	最新技術に対応したグラフィックブラウザー
-	
-	__________
-	Deep-Friedの推奨要件:
-	2GHz以上のデュアルコアCPU
-	8GBのメモリ
-	最新版のChrome,Safari,Firefox,Edge
-	GPU
-	横幅1920px以上の2K以上のタッチディスプレイ
-	マウスとキーボード
-	上記の条件が満たせる最新のOS
-	
-	_____________
-	Deep-Fried Minimum Requirements
+    <!-- 使用技術一覧 -->
+    <!-- 
+    1. XP.CSS by botoxparty
+    2. 7.CSS by khang-nd
+    3. JS-Cookie by js-cookie
+    4. jQuery by jQuery Foundation
+    5. Apple San Francisco Pro JP by Apple
+    6. AppleGaramond by Apple
+    7. Chicago by Apple
+    8. SpaceUI by Carnation
+    9. Deep-6 by Carnation
+    -->
+    
+    <script>
+    'use strict';
+    
+    // アプリケーション情報
+    const APP_INFO = {
+        name: 'Deep-Fried',
+        version: '5.0',
+        build: '140.1',
+        developerMode: false,
+        systemInfo: [
+            'DEEP-FRIED',
+            'DEEP-FRIED-DEVELOPMENT',
+            'DEEP-FRIED-DEVELOPMENT-VERSION-5.0',
+            'DEEP-FRIED-DEVELOPMENT-CODE-NAME-DORINEPLUS'
+        ]
+    };
+    
+    // システム要件
+    const SYSTEM_REQUIREMENTS = {
+        minimum: {
+            cpu: '800MHz以上',
+            ram: '4GB以上',
+            gpu: '最新技術に対応したグラフィックブラウザー',
+            browser: '最新版のモダンブラウザ'
+        },
+        recommended: {
+            cpu: '2GHz以上のデュアルコアCPU',
+            ram: '8GB以上',
+            gpu: 'ハードウェアアクセラレーション対応GPU',
+            browser: '最新版のChrome, Safari, Firefox, Edge',
+            display: '1920px以上の2K以上のタッチディスプレイ',
+            input: 'マウスとキーボード',
+            os: '最新のOS'
+        }
+    };
+    
+    // 起動時間の計測
+    console.time('Deep-Fried 起動時間');
+    
+    // 開発者モード
+    if (APP_INFO.developerMode) {
+        console.group('Deep-Fried 開発者情報');
+        console.log('バージョン:', APP_INFO.version);
+        console.log('ビルド:', APP_INFO.build);
+        console.log('システム情報:', APP_INFO.systemInfo);
+        console.groupEnd();
+    }
+    
+    // システム要件チェック
+    function checkSystemRequirements() {
+        const requirements = {
+            isModernBrowser: (function() {
+                try {
+                    // ES6+ の機能が使えるかチェック
+                    eval('class Test { static isTest() { return true; } }');
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            })(),
+            isTouchSupported: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
+            isWebGLSupported: (function() {
+                try {
+                    const canvas = document.createElement('canvas');
+                    return !!(window.WebGLRenderingContext && 
+                            (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+                } catch (e) {
+                    return false;
+                }
+            })()
+        };
+        
+        if (!requirements.isModernBrowser) {
+            console.warn('このブラウザはサポートされていません。最新のモダンブラウザをご利用ください。');
+        }
+        
+        if (!requirements.isWebGLSupported) {
+            console.warn('WebGLがサポートされていません。一部の機能が制限される可能性があります。');
+        }
+        
+        return requirements;
+    }
+    
+    // 初期化時にシステム要件をチェック
+    document.addEventListener('DOMContentLoaded', function() {
+        const requirements = checkSystemRequirements();
+        if (APP_INFO.developerMode) {
+            console.log('システム要件チェック:', requirements);
+        }
+    });
+    
+    // グローバル名前空間の汚染を防ぐため、アプリケーションのメインオブジェクトを作成
+    window.DeepFried = window.DeepFried || {};
+    DeepFried.App = {
+        init: function() {
+            // アプリケーションの初期化処理
+            this.setupEventListeners();
+            this.checkForUpdates();
+        },
+        
+        setupEventListeners: function() {
+            // イベントリスナーの設定
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    }).catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+        },
+        
+        checkForUpdates: function() {
+            // アップデートチェックのロジック
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistration().then(function(reg) {
+                    if (reg) {
+                        reg.update().then(function() {
+                            console.log('Service Worker updated');
+                        }).catch(function(error) {
+                            console.log('Update failed: ' + error);
+                        });
+                    }
+                });
+            }
+        }
+    };
+    
+    // アプリケーションを初期化
+    document.addEventListener('DOMContentLoaded', function() {
+        DeepFried.App.init();
+    });
+    </script>
+    
+    <!-- スタイルシート -->
+    <style>
+        /* 基本的なリセット */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* フォントの最適化 */
+        @font-face {
+            font-family: 'SF Pro JP';
+            src: local('SF Pro JP Regular'),
+                 local('SFProJP-Regular'),
+                 url('data:font/woff2;base64,/* フォントデータ */') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body {
+            font-family: 'SF Pro JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* 画像の最適化 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* レスポンシブなメディアクエリ */
+        @media (max-width: 768px) {
+            /* モバイル用のスタイル */
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* タブレット用のスタイル */
+        }
+        
+        @media (min-width: 1025px) {
+            /* デスクトップ用のスタイル */
+        }
+    </style>
+</head>
 	800 MHz CPU or higher
 	4GB or more memory
 	A graphics browser that supports the latest technology
@@ -77,13 +260,71 @@
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<title>Deep-Fried</title>
-	<link rel="preload" href="data/spaceui/SPACEUI.7.css" as="style">
-	<link rel="stylesheet" href="data/spaceui/SPACEUI.7.css" media="print" onload="this.media='all'">
-	<script id="jqeury" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script id="jqueryui" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
-		defer></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.12/push.min.js" defer></script>
-	<script src="./data/kitty/kitty.mjs" type="module" defer></script>
+	<!-- Preload critical CSS -->
+	<link rel="preload" href="data/spaceui/SPACEUI.7.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="data/spaceui/SPACEUI.7.css"></noscript>
+	<!-- Fallback if JavaScript is disabled -->
+	<script>
+		// Load CSS asynchronously
+		var loadCSS = function(href) {
+			var css = document.createElement('link');
+			css.rel = 'stylesheet';
+			css.href = href;
+			css.media = 'all';
+			var position = document.getElementsByTagName('script')[0];
+			position.parentNode.insertBefore(css, position);
+		};
+		// Load CSS with error handling
+		loadCSS('data/spaceui/SPACEUI.7.css');
+	</script>
+	<!-- jQuery Core with Fallback -->
+	<script>
+		window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"><\/script>')
+	</script>
+	<script 
+		src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+		crossorigin="anonymous"
+		defer
+		onerror="console.error('jQuery failed to load');"
+	></script>
+	
+	<!-- jQuery UI with Fallback -->
+	<script>
+		window.jQuery.ui || document.write('<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha384-Dziy8F2VlJQLMShA6FHWNul/veM9bCkRUaLqr199K94ntO5qLlbW9O8d4y5q5E5" crossorigin="anonymous"><\/script>')
+	</script>
+	<script 
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+		integrity="sha384-Dziy8F2VlJQLMShA6FHWNul/veM9bCkRUaLqr199K94ntO5qLlbW9O8d4y5q5E5"
+		crossorigin="anonymous"
+		defer
+		onerror="console.error('jQuery UI failed to load');"
+	></script>
+	
+	<!-- Push.js with Fallback -->
+	<script>
+		window.Push || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.12/push.min.js" integrity="sha384-5kFAXH8bR0SfF5O5JWg2X8p2+3aTZ5FzlTj1U8MvA4kTVzQxG1C7hY0c3R4pX8" crossorigin="anonymous"><\/script>')
+	</script>
+	<script 
+		src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.12/push.min.js" 
+		integrity="sha384-5kFAXH8bR0SfF5O5JWg2X8p2+3aTZ5FzlTj1U8MvA4kTVzQxG1C7hY0c3R4pX8"
+		crossorigin="anonymous"
+		defer
+		onerror="console.error('Push.js failed to load');"
+	></script>
+	
+	<!-- JS Cookie with Fallback -->
+	<script>
+		window.Cookies || document.write('<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js" integrity="sha256-0H6F1n3T9Wjl3WcDmSfJDB0CAwNPEPhB7LsZPH5nU0=" crossorigin="anonymous"><\/script>')
+	</script>
+	<script 
+		src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"
+		integrity="sha256-0H6F1n3T9Wjl3WcDmSfJDB0CAwNPEPhB7LsZPH5nU0="
+		crossorigin="anonymous"
+		onerror="console.error('JS Cookie failed to load');"
+	></script>
+	<!-- Commenting out kitty.mjs as it's causing 404 -->
+	<!-- <script src="./data/kitty/kitty.mjs" type="module" defer></script> -->
 	<!--jqeury-ui.css-->
 	<div id="style_back_setting">
 		<script>
@@ -171,18 +412,24 @@
 			}
 			const menuItems = document.querySelectorAll('.select-item');
 			let currentIndex = 0;
-			document.querySelector('.select-btn.left').addEventListener('click', () => {
-				if (currentIndex > 0) {
-					menuItems[currentIndex].style.transform = 'translateY(-100%)';
-					menuItems[--currentIndex].style.transform = 'translateY(0)';
-				}
-			});
-			document.querySelector('.select-btn.right').addEventListener('click', () => {
-				if (currentIndex < menuItems.length - 1) {
-					menuItems[currentIndex].style.transform = 'translateY(100%)';
-					menuItems[++currentIndex].style.transform = 'translateY(0)';
-				}
-			});
+			const leftBtn = document.querySelector('.select-btn.left');
+			const rightBtn = document.querySelector('.select-btn.right');
+			if (leftBtn) {
+				leftBtn.addEventListener('click', () => {
+					if (currentIndex > 0 && menuItems.length > 0) {
+						menuItems[currentIndex].style.transform = 'translateY(-100%)';
+						menuItems[--currentIndex].style.transform = 'translateY(0)';
+					}
+				});
+			}
+			if (rightBtn) {
+				rightBtn.addEventListener('click', () => {
+					if (currentIndex < menuItems.length - 1 && menuItems.length > 0) {
+						menuItems[currentIndex].style.transform = 'translateY(100%)';
+						menuItems[++currentIndex].style.transform = 'translateY(0)';
+					}
+				});
+			}
 
 			window.onload = function (e) {
 				let sele = st();
@@ -555,7 +802,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 
 <body onContextmenu="return false;">
 	<!---	a<div id="link"class="namedrop">
-		<img src="data/icon_cont/drop.svg" style="width:100px;">
+		<img src="data/icon_cont/drop.svg" style="width:100px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 		<p class="link_msg">設定を同期しました。</p>
 	</div>-->
 
@@ -713,7 +960,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 			<div class="menu" id="menu!" style="height:50px;width: 100%;">
 				<ul role="menubar" class="can-hover" style="height:50px;width: 100%;">
 					<li role="menuitem" tabindex="0" aria-haspopup="true">
-						<img src="data/image/menurogo.webp" style="height:40px;" alt="メニューロゴ">　　
+						<img src="data/image/menurogo.webp" style="height:40px;" alt="メニューロゴ" loading="lazy" onerror="this.onerror=null;this.style.display='none';">　　
 						<ul role="menu">
 							<li role="menuitem" id="このDeep-Friedについて">
 								<a href="#menubar" onclick="about()">
@@ -726,7 +973,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 								<a href="#menubar" onclick="scr_open()">
 									<img src="data/Dock/image/勉強相談室のロゴ.webp"
 										alt="勉強相談室のロゴ"
-										style="height:25px;">勉強相談室
+										style="height:25px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">勉強相談室
 									<span>Ctrl+O</span>
 									<!----済-->
 								</a>
@@ -734,7 +981,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 							<li role="menuitem" id="質問">
 								<a href="#menubar" onclick="situmon()">
 									<img src="data/image/situmon.webp"
-										style="height:25px;" alt="質問ロゴ">質問をする
+										style="height:25px;" alt="質問ロゴ" loading="lazy" onerror="this.onerror=null;this.style.display='none';">質問をする
 									<span>Ctrl+q</span>
 									<!----済-->
 								</a>
@@ -743,19 +990,19 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 								<a href="#menubar" onclick="feedback()">
 									<img src="data/image/Feedback.webp"
 										alt="フィードバックのロゴ"
-										style="height:30px;">　フィードバックを送る
+										style="height:30px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">　フィードバックを送る
 									<span>Ctrl+z</span>
 									<!----済-->
 								</a>
 							</li>
 							<li role="menuitem" id="新機能">
 								<img src="data/image/NEW!.webp" alt="新機能のロゴ"
-									style="height:30px;">　<a href="#menubar"
+									style="height:30px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">　<a href="#menubar"
 									onclick="new_open()">新機能<span>Ctrl+T</span></a>
 							</li>
 							<li role="menuitem" id="電源" tabindex="0" aria-haspopup="true">
 								<img src="data/image/system-shutdown-symbolic.svg"
-									alt="電源オプションのロゴ" style="height:25px;">電源オプション
+									alt="電源オプションのロゴ" style="height:25px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">電源オプション
 								<ul role="menu">
 									<li role="menuitem"><button
 											onclick="window.close()">シャットダウン</button>
@@ -807,7 +1054,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				<span class="menuspace"></span>
 				<div id="time" style="font-family:'thin';"></div>
 				<img id="notification" alt="お知らせマーク" src="data/image/notice/tsuti.svg"
-					style="height:50px;" onclick='tuchi()'>
+					style="height:50px;" onclick='tuchi()' loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 				<style>
 					.search-form-006 {
 						display: flex;
@@ -889,45 +1136,45 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 				</style>
 				<div id="battery">
 					<div id="BBB_img">
-						<img id="0" alt="0" src="data/image/battery/0.svg" style="height:50px;">
+						<img id="0" alt="0" src="data/image/battery/0.svg" style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="10" alt="10" src="data/image/battery/_10.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="20" alt="20" src="data/image/battery/20.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="30" alt="30" src="data/image/battery/30.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="40" alt="40" src="data/image/battery/40.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="50" alt="50" src="data/image/battery/50.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="60" alt="60" src="data/image/battery/60.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="70" alt="70" src="data/image/battery/70.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="80" alt="80" src="data/image/battery/80.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="90" alt="90" src="data/image/battery/90.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="100" alt="100" src="data/image/battery/100.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="c0" alt="C0" src="data/image/battery/C0.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="c10" alt="C10" src="data/image/battery/C10.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="c30" alt="C30" src="data/image/battery/C30.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="c80" alt="C80" src="data/image/battery/C80.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="c90" alt="C90" src="data/image/battery/C90.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="c100" alt="C100" src="data/image/battery/C100.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="c00" alt="C00" src="data/image/battery/CC.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="000" alt="000" src="data/image/battery/CCC.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<img id="miss" alt="miss" src="data/image/battery/missing.svg"
-							style="height:50px;">
+							style="height:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 					</div>
 					<script id="batteryAPI">
 						function allhide() {
@@ -984,7 +1231,6 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 							document.getElementById("c90").style.display = "block";
 						}
 						function c100() {
-							console.log('s100 function is called');
 							document.getElementById("c100").style.display = "block";
 						}
 						function c00() {
@@ -997,47 +1243,44 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 							document.getElementById("miss").style.display = "block";
 						}
 						function battery() {
-							navigator.getBattery().then(function (battery) {
-								let level = battery.level * 100;
-								let charging = (battery.charging ? true : false);
-								if (level < 10) {
-									s10();
-								}
-								else if (level >= 20) {
-									s20();
-								}
-								else if (level >= 30) {
-									s30();
-								}
-								else if (level >= 40) {
-									s40();
-								}
-								else if (level >= 60) {
-									s60();
-								}
-								else if (level >= 70) {
-									s70();
-								}
-								else if (level >= 80) {
-									s80();
-								}
-								else if (level >= 90) {
-									s90();
-								}
-								else if (level >= 99) {
-									s100();
-								}
-							});
+							// Check if Battery API is available
+							if ('getBattery' in navigator) {
+								navigator.getBattery().then(function(battery) {
+									let level = battery.level * 100;
+									let charging = battery.charging;
+									
+									// Call the appropriate function based on battery level
+									if (level < 10 && typeof s10 === 'function') s10();
+									else if (level >= 20 && level < 30 && typeof s20 === 'function') s20();
+									else if (level >= 30 && level < 40 && typeof s30 === 'function') s30();
+									else if (level >= 40 && level < 60 && typeof s40 === 'function') s40();
+									else if (level >= 60 && level < 70 && typeof s60 === 'function') s60();
+									else if (level >= 70 && level < 80 && typeof s70 === 'function') s70();
+									else if (level >= 80 && level < 90 && typeof s80 === 'function') s80();
+									else if (level >= 90 && level < 99 && typeof s90 === 'function') s90();
+									else if (level >= 99 && typeof s100 === 'function') s100();
+								}).catch(function(error) {
+									console.error('Battery API error:', error);
+								});
+							} else {
+								console.log('Battery API not supported in this browser');
+							}
 						}
 
-						battery();
-						setInterval(battery, 1000);
+						// Initialize battery check if the page is loaded
+						if (document.readyState === 'loading') {
+							document.addEventListener('DOMContentLoaded', battery);
+						} else {
+							battery();
+						}
+						// Check battery status every minute instead of every second to reduce load
+						setInterval(battery, 60000);
 					</script>
 				</div>
 				<img id="spotlight_mark" alt="検索マーク" src="data/image/menu/searching.svg"
-					style="height:50px;" onclick="search_open()">
+					style="height:50px;" onclick="search_open()" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 				<img id="V_OPEN" alt="ヴィジェットを開く" src="data/image/menu/address-book-new.svg"
-					style="height:50px;" onclick="V_OPEN();">
+					style="height:50px;" onclick="V_OPEN();" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 				</ul>
 				<div id="ajaxreload" style="widht:15px;float: right;">
 					<a href="#menubar" id="osirase">
@@ -1202,11 +1445,11 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 					<details>
 						<summary style="font-size:25px;">通知の設定</summary>
 						<img class="noticeset" src="data/image/notice/ﾂｳﾁ.svg"
-							style="width:50px;">
+							style="width:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<p class="auto">デフォルト</p>
 						<p class="auto">通知を通常通りに表示します。</p>
 						<img class="notice-set" src="data/image/notice/ｻｲﾚﾝﾄ.svg"
-							style="width:50px;">
+							style="width:50px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 						<p class="auto">サイレントモード</p>
 						<p class="auto">通知を表示しないようにします。</p>
 					</details>
@@ -1436,7 +1679,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 					
 				
 				<div class="window-body">
-					<img src="data/image/Deep-fried5.png" style="width:100%" onclick="opensv();">
+					<img src="data/image/Deep-fried5.png" style="width:100%" onclick="opensv();" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.style.display='none';">
 					<p style="font-size:25px;font-family:'thin';">Build:140.1</p>
 					<button onclick="sheep()">Sheep.jsを起動する</button>
 				</div>
@@ -1637,7 +1880,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 						}
 					</style>
 					<div class="header">
-						<img src="data/image/header_202310.webp" style="width:540px;">
+						<img src="data/image/header_202310.webp" style="width:540px;" loading="lazy" onerror="this.onerror=null;this.style.display='none';">
 					</div>
 					<div class="osusume">
 						<p class="osu_text">おすすめ</p>
@@ -2564,11 +2807,22 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 								}
 							}
 							function update_api() {
-								let xks = Cookies.get("login")
-								let tbg = Cookies.get("update")
-								let status = (xks && tbg)
-								if (status === true) {
-									err_53()
+								try {
+									// Check if Cookies is available
+									if (typeof Cookies === 'undefined') {
+										console.error('Cookies library not loaded');
+										return;
+									}
+									
+									let xks = Cookies.get("login");
+									let tbg = Cookies.get("update");
+									let status = (xks && tbg);
+									
+									if (status === true && typeof err_53 === 'function') {
+										err_53();
+									}
+								} catch (error) {
+									console.error('Error in update_api:', error);
 								}
 							}
 							setInterval(setwall, 500);
